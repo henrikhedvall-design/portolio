@@ -55,6 +55,7 @@
 }
 .label{position:sticky;top:32px;align-self:flex-start}
 @media (max-width: 1000px){.label{position:static}}
+@media (max-width: 1000px){.wm{order:2;flex-direction:row !important;flex-wrap:wrap;gap:0 !important;margin-top:-12px}.wm>span:first-child{display:none}.wm>span+span+span::before{content:" · ";white-space:pre}}
 @media (max-width: 600px){#top h1{font-size:calc((100vw - 40px) / 8.1) !important}}
 @media (max-width: 600px){#contact .mail{font-size:min(36px, calc((100vw - 40px) / 10.8))}}
 @media (prefers-reduced-motion: no-preference){
