@@ -72,6 +72,7 @@ footer.bleed{clip-path:inset(-2px -100vmax 0)}
 .svc{position:relative;top:-1px}
 .ic .s{fill:none;stroke:#5E5E5A;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1)}
 .ic.in .s{stroke-dashoffset:0}
+.ic .s.dl{transition-delay:200ms}
 .ic .s.k{stroke:var(--accent)}
 .ic .spin,.ic .turn{transform-origin:12px 12px}
 .ic.in .spin{animation:spin 900ms cubic-bezier(.65,0,.35,1) 900ms both}

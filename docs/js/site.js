@@ -134,7 +134,8 @@
   /* Image viewer */
   var lb = null, lbX = null, lbSkip = 0;
   function media(el) { return $$("img, video", el).filter(function (m) { return !m.classList.contains("fl") && !m.classList.contains("dt"); }); }
-  function srcOf(m) { return m.getAttribute("data-lbsrc") || m.currentSrc || m.src || m.getAttribute("src") || ""; }
+  function keyOf(m) { return m.getAttribute("data-e-data-lbsrc") || m.getAttribute("data-e-src") || m.getAttribute("data-lbsrc") || m.currentSrc || m.src || m.getAttribute("src") || ""; }
+  function full(it) { return window.__full ? window.__full(it.el) : Promise.resolve(it.el.getAttribute("data-lbsrc") || it.el.currentSrc || it.el.src); }
   function show(i) {
     if (!lb) return;
     var n = lb.list.length;
@@ -143,26 +144,33 @@
     var it = lb.list[i], img = $(".stg img", lb.el), vid = $(".stg video", lb.el);
     img.classList.remove("ok");
     vid.classList.remove("ok");
+    var cur = lb;
     if (it.vid) {
       img.style.display = "none";
       vid.style.display = "";
-      vid.poster = it.poster;
-      vid.src = it.src;
+      vid.poster = it.el.poster || "";
       vid.muted = true;
       vid.setAttribute("aria-label", it.alt);
-      try { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
-      requestAnimationFrame(function () { vid.classList.add("ok"); });
     } else {
       try { vid.pause(); } catch (e) {}
       vid.style.display = "none";
       img.style.display = "";
-      img.onload = function () { img.classList.add("ok"); };
       img.alt = it.alt;
-      img.src = it.src;
-      if (img.complete && img.naturalWidth) requestAnimationFrame(function () { img.classList.add("ok"); });
     }
+    full(it).then(function (url) {
+      if (lb !== cur || lb.i !== i) return;
+      if (it.vid) {
+        vid.src = url;
+        try { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+        requestAnimationFrame(function () { vid.classList.add("ok"); });
+      } else {
+        img.onload = function () { img.classList.add("ok"); };
+        img.src = url;
+        if (img.complete && img.naturalWidth) requestAnimationFrame(function () { img.classList.add("ok"); });
+      }
+    }).catch(function () {});
     $(".cp", lb.el).textContent = (i + 1) + " / " + n;
-    [lb.list[(i + 1) % n], lb.list[(i - 1 + n) % n]].forEach(function (o) { if (!o.vid) new Image().src = o.src; });
+    [lb.list[(i + 1) % n], lb.list[(i - 1 + n) % n]].forEach(function (o) { if (!o.vid) full(o).then(function (u) { new Image().src = u; }).catch(function () {}); });
   }
   function close() {
     if (!lb) return;
@@ -179,12 +187,12 @@
     if (lb || !pg || !first) return;
     var list = [], seen = {};
     media(pg).forEach(function (m) {
-      var src = srcOf(m);
-      if (!src || seen[src] != null) return;
-      seen[src] = list.length;
-      list.push({ src: src, vid: m.tagName === "VIDEO", poster: m.getAttribute("poster") || "", alt: m.getAttribute("alt") || m.getAttribute("aria-label") || "" });
+      var key = keyOf(m);
+      if (!key || seen[key] != null) return;
+      seen[key] = list.length;
+      list.push({ el: m, vid: m.tagName === "VIDEO", alt: m.getAttribute("alt") || m.getAttribute("aria-label") || "" });
     });
-    var i = seen[srcOf(first)];
+    var i = seen[keyOf(first)];
     if (i == null) return;
     var el = d.createElement("div");
     el.className = "lbx";
