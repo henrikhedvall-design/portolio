@@ -56,17 +56,19 @@
     if (!pw.value) return;
     btn.disabled = true;
     msg.textContent = "Checking…";
-    derive(pw.value.trim()).then(function (raw) {
+    var pass = pw.value.normalize("NFKC").trim().toLowerCase().replace(/[\u2010-\u2015\u2212\s_]+/g, "-");
+    derive(pass).then(function (raw) {
       return importKey(raw).then(open).then(function () {
         try { localStorage.setItem(STORE, JSON.stringify({ k: b64(raw), exp: Date.now() + P.days * 864e5 })); } catch (e) {}
       });
     }).catch(function (err) {
       btn.disabled = false;
-      msg.textContent = err && err.message === "load" ? "Could not load the page. Try again." : "Wrong password.";
+      msg.textContent = err && err.name === "OperationError" ? "Wrong password." : "Could not load the page. Check your connection and try again.";
       pw.select();
     });
   });
 
+  if (location.protocol === "http:" && !/^(localhost|127\.|\[::1\])/.test(location.host)) { location.replace("https:" + location.href.slice(5)); return; }
   if (!(window.crypto && crypto.subtle)) { gate.hidden = false; msg.textContent = "This browser cannot open the site."; btn.disabled = true; return; }
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) {}
