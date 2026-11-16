@@ -14,8 +14,8 @@
       return crypto.subtle.deriveBits({ name: "PBKDF2", salt: unb64(P.salt), iterations: P.iter, hash: "SHA-256" }, k, 256);
     });
   }
-  function fetchDec(url, k) {
-    return fetch(url).then(function (r) { if (!r.ok) throw new Error("load"); return r.arrayBuffer(); }).then(function (buf) {
+  function fetchDec(url, k, fresh) {
+    return fetch(url, fresh ? { cache: "no-cache" } : undefined).then(function (r) { if (!r.ok) throw new Error("load"); return r.arrayBuffer(); }).then(function (buf) {
       return crypto.subtle.decrypt({ name: "AES-GCM", iv: new Uint8Array(buf, 0, 12) }, k, new Uint8Array(buf, 12));
     });
   }
@@ -47,7 +47,7 @@
     }
   }
   function open(k) {
-    return fetchDec(P.root + "p/" + P.page + ".bin", k).then(function (buf) { key = k; render(JSON.parse(new TextDecoder().decode(buf))); });
+    return fetchDec(P.root + "p/" + P.page + ".bin", k, true).then(function (buf) { key = k; render(JSON.parse(new TextDecoder().decode(buf))); });
   }
   function ask() { gate.hidden = false; try { pw.focus(); } catch (e) {} }
 
