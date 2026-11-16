@@ -39,7 +39,7 @@
       });
     });
     var s = d.createElement("script");
-    s.src = P.root + "js/site.js";
+    s.src = P.root + "js/site.js?v=" + P.v;
     d.body.appendChild(s);
     if (location.hash.length > 1) {
       var t = d.getElementById(location.hash.slice(1));
