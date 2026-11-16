@@ -169,7 +169,11 @@
         if (img.complete && img.naturalWidth) requestAnimationFrame(function () { img.classList.add("ok"); });
       }
     }).catch(function () {});
-    $(".cp", lb.el).textContent = (i + 1) + " / " + n;
+    var cp = $(".cp", lb.el);
+    var add = function (cls, text) { if (!text) return; var e = d.createElement("span"); e.className = cls; e.textContent = text; cp.appendChild(e); };
+    cp.textContent = "";
+    if (it.cap) { add("cn", it.cap[0]); add("cm", it.cap[1]); }
+    add("cc", (i + 1) + " / " + n);
     [lb.list[(i + 1) % n], lb.list[(i - 1 + n) % n]].forEach(function (o) { if (!o.vid) full(o).then(function (u) { new Image().src = u; }).catch(function () {}); });
   }
   function close() {
@@ -190,7 +194,10 @@
       var key = keyOf(m);
       if (!key || seen[key] != null) return;
       seen[key] = list.length;
-      list.push({ el: m, vid: m.tagName === "VIDEO", alt: m.getAttribute("alt") || m.getAttribute("aria-label") || "" });
+      var fc = m.closest ? m.closest("figure") : null;
+      var sp = fc ? $$("figcaption span", fc) : [];
+      list.push({ el: m, vid: m.tagName === "VIDEO", alt: m.getAttribute("alt") || m.getAttribute("aria-label") || "",
+        cap: sp.length ? [sp[0].textContent, sp[1] ? sp[1].textContent : ""] : null });
     });
     var i = seen[keyOf(first)];
     if (i == null) return;
