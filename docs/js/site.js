@@ -164,16 +164,26 @@
         try { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
         requestAnimationFrame(function () { vid.classList.add("ok"); });
       } else {
-        img.onload = function () { img.classList.add("ok"); };
+        img.onload = function () { img.classList.add("ok"); if (lb === cur && lb.i === i) lb.place(); };
         img.src = url;
         if (img.complete && img.naturalWidth) requestAnimationFrame(function () { img.classList.add("ok"); });
       }
     }).catch(function () {});
     var cp = $(".cp", lb.el);
-    var add = function (cls, text) { if (!text) return; var e = d.createElement("span"); e.className = cls; e.textContent = text; cp.appendChild(e); };
+    var add = function (to, cls, text) { if (!text) return null; var e = d.createElement("span"); e.className = cls; e.textContent = text; to.appendChild(e); return e; };
     cp.textContent = "";
-    if (it.cap) { add("cn", it.cap[0]); add("cm", it.cap[1]); }
-    add("cc", (i + 1) + " / " + n);
+    cp.classList.toggle("has", !!it.cap);
+    if (it.cap) { var left = add(cp, "cl", " "); left.textContent = ""; add(left, "cn", it.cap[0]); add(left, "cm", it.cap[1]); }
+    add(cp, "cc", (i + 1) + " / " + n);
+    // With a caption, line the text up with the image's left and right edges
+    lb.place = function () {
+      cp.style.left = cp.style.right = cp.style.padding = "";
+      if (!it.cap || it.vid || window.innerWidth <= 700 || !img.offsetWidth) return;
+      cp.style.left = img.offsetLeft + "px";
+      cp.style.right = (img.offsetParent.clientWidth - img.offsetLeft - img.offsetWidth) + "px";
+      cp.style.padding = "0";
+    };
+    lb.place();
     [lb.list[(i + 1) % n], lb.list[(i - 1 + n) % n]].forEach(function (o) { if (!o.vid) full(o).then(function (u) { new Image().src = u; }).catch(function () {}); });
   }
   function close() {
@@ -246,6 +256,7 @@
     var tr = e.target && e.target.closest ? e.target.closest("[data-lb]") : null;
     if (tr && e.target === tr && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(tr); }
   });
+  window.addEventListener("resize", function () { if (lb && lb.place) lb.place(); });
   d.addEventListener("pointerdown", function (e) { if (lb) lbX = e.clientX; });
   window.addEventListener("pointerup", function (e) {
     if (!lb) return;
