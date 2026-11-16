@@ -151,6 +151,7 @@
       vid.poster = it.el.poster || "";
       vid.muted = true;
       vid.setAttribute("aria-label", it.alt);
+      vid.onloadedmetadata = function () { if (lb === cur && lb.i === i) lb.place(); };
     } else {
       try { vid.pause(); } catch (e) {}
       vid.style.display = "none";
@@ -178,9 +179,12 @@
     // With a caption, line the text up with the image's left and right edges
     lb.place = function () {
       cp.style.left = cp.style.right = cp.style.padding = "";
-      if (!it.cap || it.vid || window.innerWidth <= 700 || !img.offsetWidth) return;
-      cp.style.left = img.offsetLeft + "px";
-      cp.style.right = (img.offsetParent.clientWidth - img.offsetLeft - img.offsetWidth) + "px";
+      var el = it.vid ? vid : img;
+      if (!it.cap || window.innerWidth <= 700 || !el.offsetWidth) return;
+      var l = el.offsetLeft, w = el.offsetWidth;
+      if (it.vid) { var vw = Math.min(w, el.offsetHeight * (el.videoWidth || 16) / (el.videoHeight || 10)); l += (w - vw) / 2; w = vw; }
+      cp.style.left = l + "px";
+      cp.style.right = (el.offsetParent.clientWidth - l - w) + "px";
       cp.style.padding = "0";
     };
     lb.place();
@@ -199,7 +203,7 @@
   function open(tr) {
     var pg = $(".pg"), first = media(tr)[0];
     if (lb || !pg || !first) return;
-    var list = [], seen = {};
+    var list = [], seen = {}, h1 = $("h1", pg), title = h1 ? h1.textContent.trim() : "";
     media(pg).forEach(function (m) {
       var key = keyOf(m);
       if (!key || seen[key] != null) return;
@@ -207,7 +211,7 @@
       var fc = m.closest ? m.closest("figure") : null;
       var sp = fc ? $$("figcaption span", fc) : [];
       list.push({ el: m, vid: m.tagName === "VIDEO", alt: m.getAttribute("alt") || m.getAttribute("aria-label") || "",
-        cap: sp.length ? [sp[0].textContent, sp[1] ? sp[1].textContent : ""] : null });
+        cap: sp.length ? [sp[0].textContent, sp[1] ? sp[1].textContent : ""] : (title ? [title, ""] : null) });
     });
     var i = seen[keyOf(first)];
     if (i == null) return;
