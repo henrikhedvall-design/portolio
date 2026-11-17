@@ -359,6 +359,29 @@ def build():
     open(os.path.join(DIST, "css", "site.css"), "w", encoding="utf-8").write(styles.css())
 
 
+def version_refs(out):
+    """Adds ?v=<content hash> to every local image, video, CSS and JS reference in the published HTML,
+    so a changed file is fetched at once instead of waiting for the browser cache to expire."""
+    import hashlib
+    ref = re.compile(r'(["\'\s,(])((?:\.\./|/)?(?:assets|css|js)/[A-Za-z0-9._-]+\.[A-Za-z0-9]+)(?=["\'\s,)])')
+    cache = {}
+    for d, _, files in os.walk(out):
+        for name in files:
+            if not name.endswith(".html"):
+                continue
+            path = os.path.join(d, name)
+            html = open(path, encoding="utf-8").read()
+            def sub(m):
+                url = m.group(2)
+                target = os.path.normpath(os.path.join(out, url.lstrip("/")) if url.startswith("/") else os.path.join(d, url))
+                if not os.path.isfile(target):
+                    return m.group(0)
+                if target not in cache:
+                    cache[target] = hashlib.sha256(open(target, "rb").read()).hexdigest()[:8]
+                return f"{m.group(1)}{url}?v={cache[target]}"
+            open(path, "w", encoding="utf-8").write(ref.sub(sub, html))
+
+
 PROTECT = False  # True: publish the password-protected build (needs .secret.json). False: publish the open site.
 
 if __name__ == "__main__":
@@ -373,4 +396,5 @@ if __name__ == "__main__":
         gate = os.path.join(out, "js", "gate.js")
         if os.path.exists(gate):
             os.remove(gate)  # only used by the protected build
+        version_refs(out)
         print("published open site to docs/")
