@@ -43,7 +43,7 @@ img,video{display:block;width:100%;height:auto}
 .lbx .cp.has{justify-content:space-between;flex-wrap:nowrap;text-align:left}
 .lbx .cp.has .cc{flex:none}
 @media (max-width: 700px){.lbx .stg{padding:64px 12px 104px}.lbx .cp{padding:0 60px;bottom:16px}.lbx .cp.has{flex-direction:column;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:2px;text-align:center}.lbx .cp .cl{display:contents}.lbx .pv,.lbx .nx{top:auto;bottom:12px;margin:0}}
-@media (max-width: 900px){.mw>:nth-child(1){order:1}.mw>:nth-child(2){order:2}.mw>:nth-child(3){order:4}.mw>:nth-child(4){order:3}.mw>:nth-child(5){order:5}.mw>:nth-child(6){order:6}}
+@media (max-width: 900px){.mw>:nth-child(1){order:1}.mw>:nth-child(2){order:2}.mw>:nth-child(3){order:5}.mw>:nth-child(4){order:3}.mw>:nth-child(5){order:4}.mw>:nth-child(6){order:6}.mw>:nth-child(7){order:7}}
 .nf{min-height:100vh;min-height:100dvh;box-sizing:border-box;padding:36px clamp(20px,4vw,60px);display:flex;flex-direction:column;gap:20px;background:#F5F5F3;color:#111110;font-family:'Familjen Grotesk','Helvetica Neue',Arial,sans-serif;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .nf p{margin:0}
 .nf-name{font-size:16px;font-weight:600;margin-bottom:auto !important}
