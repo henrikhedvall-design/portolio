@@ -145,9 +145,16 @@ def m_next(href, title, sub):
 </section>'''
 
 
-def m_fig(n, file, alt, name, meta):
+REDA_FACE = '''<div class="fc" aria-hidden="true"><svg viewBox="0 0 96 86.4" focusable="false"><g class="fp"><path d="M41.12 16H0V24.8H41.12V16Z" fill="currentColor"></path><path d="M24.8 0H16V41.12H24.8V0Z" fill="currentColor"></path></g><path class="fo" d="M96.16 16H58V24.8H96.16V16Z" fill="currentColor"></path><path class="fm" d="M3 56C11.4 74.08 27.4 86.08 48.04 86.08C69 86.08 85 74.08 93.08 56H83.4C77 68.48 65.8 77.28 48.04 77.28C30.6 77.28 19 68.48 12.68 56H3Z" fill="currentColor"></path></svg></div>'''
+
+
+def m_fig(n, file, alt, name, meta, extra=""):
+    """A More work tile. extra="face" lays the animated Reda face over the last phone in the image."""
+    img = f'<img class="zm" src="[[A]]{file}" alt="{alt}" width="2000" height="1500">'
+    if extra == "face":
+        img = f'<div class="zm fw"><img src="[[A]]{file}" alt="{alt}" width="2000" height="1500">{REDA_FACE}</div>'
     return f'''<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px">
-<div {m_rv(n, "; background: #E7E7E3")}><img class="zm" src="[[A]]{file}" alt="{alt}" width="2000" height="1500"></div>
+<div {m_rv(n, "; background: #E7E7E3")}>{img}</div>
 <figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; font-size: 16px"><span>{name}</span><span style="color: #5E5E5A">{meta}</span></figcaption>
 </figure>'''
 

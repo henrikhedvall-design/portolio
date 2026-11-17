@@ -1,0 +1,12 @@
+.fw{position:relative}
+.fc{position:absolute;left:83.6%;top:53.73%;width:6.15%;height:7.73%;background:#FAFAFA;color:#191970;pointer-events:none}
+.fc svg{position:absolute;left:8.13%;top:10.34%;width:85.4%;height:auto;overflow:visible;display:block}
+.fc .fp,.fc .fo,.fc .fm{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion: no-preference){
+.rv.in .fc .fp{animation:fcP 9s infinite both}
+.rv.in .fc .fo{animation:fcO 9s infinite both}
+.rv.in .fc .fm{animation:fcM 9s infinite both}
+@keyframes fcP{0%,2.2%{opacity:0;transform:rotate(90deg);animation-timing-function:cubic-bezier(.2,0,0,1)}11.1%,15.6%{opacity:1;transform:rotate(0deg);animation-timing-function:cubic-bezier(.2,0,0,1)}25.6%,94%{opacity:1;transform:rotate(-180deg)}100%{opacity:0;transform:rotate(-180deg)}}
+@keyframes fcO{0%,2.2%{opacity:0;transform:translateX(12px);animation-timing-function:cubic-bezier(.2,0,0,1)}11.1%,94%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(0)}}
+@keyframes fcM{0%,2.2%{opacity:0;transform:translateY(8px);animation-timing-function:cubic-bezier(.2,0,0,1)}11.1%,15.6%{opacity:1;transform:translateY(0);animation-timing-function:cubic-bezier(.2,0,0,1)}25.6%,94%{opacity:1;transform:translateY(-3px)}100%{opacity:0;transform:translateY(-3px)}}
+}
