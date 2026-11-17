@@ -121,3 +121,10 @@ footer.bleed{clip-path:inset(-2px -100vmax 0)}
 .w{display:inline-block;white-space:nowrap;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
 .c{display:inline-block;padding:0 .06em;margin:0 -.06em}
 .dot{display:inline-block;transform-origin:50% 85%;color:var(--accent);cursor:pointer}
+
+/* Start page: a soft green glow around the dot when the pointer is near */
+.pg{position:relative}
+.pg>.c-wrap{position:relative;z-index:1}
+.pg::before{content:"";position:absolute;left:0;right:0;top:var(--gt,0px);height:var(--gh,0px);pointer-events:none;background:var(--accent);opacity:var(--go,0);transition:opacity 700ms ease;-webkit-mask-image:radial-gradient(circle 300px at var(--gx,50%) var(--gy,50%), rgba(0,0,0,1.000) 0%, rgba(0,0,0,0.948) 10%, rgba(0,0,0,0.809) 20%, rgba(0,0,0,0.621) 30%, rgba(0,0,0,0.429) 40%, rgba(0,0,0,0.266) 50%, rgba(0,0,0,0.149) 60%, rgba(0,0,0,0.075) 70%, rgba(0,0,0,0.034) 80%, rgba(0,0,0,0.014) 90%, transparent 100%),linear-gradient(transparent 0, #000 150px, #000 calc(100% - 170px), transparent 100%);mask-image:radial-gradient(circle 300px at var(--gx,50%) var(--gy,50%), rgba(0,0,0,1.000) 0%, rgba(0,0,0,0.948) 10%, rgba(0,0,0,0.809) 20%, rgba(0,0,0,0.621) 30%, rgba(0,0,0,0.429) 40%, rgba(0,0,0,0.266) 50%, rgba(0,0,0,0.149) 60%, rgba(0,0,0,0.075) 70%, rgba(0,0,0,0.034) 80%, rgba(0,0,0,0.014) 90%, transparent 100%),linear-gradient(transparent 0, #000 150px, #000 calc(100% - 170px), transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
+@media (prefers-color-scheme: dark){html:not(.lt) .pg::before{filter:opacity(.75)}}
+html.dk .pg::before{filter:opacity(.75)}

@@ -66,7 +66,30 @@
   if (top && !still) {
     var hraf = 0, chars = $$("[data-c]", top);
     var setW = function (c, hv) { var p = c.getAttribute("data-c").split(","); c.style.fontWeight = Math.round(+p[0] + +p[1] * hv); };
+    /* A soft glow lights up around the dot as the pointer comes near it */
+    var pg = $(".pg"), gx = 0, gy = 0, tx = 0, ty = 0, graf = 0, gon = false;
+    var glow = function () {
+      graf = 0;
+      gx += (tx - gx) * 0.16; gy += (ty - gy) * 0.16;
+      pg.style.setProperty("--gx", gx.toFixed(1) + "px");
+      pg.style.setProperty("--gy", gy.toFixed(1) + "px");
+      if (Math.abs(tx - gx) + Math.abs(ty - gy) > 0.5) graf = requestAnimationFrame(glow);
+    };
+    var aim = function (x, y) {
+      var pr = pg.getBoundingClientRect(), tr = top.getBoundingClientRect();
+      var dr = dot.getBoundingClientRect(), cx = dr.left + dr.width / 2, cy = dr.top + dr.height * 0.72;
+      tx = cx - pr.left; ty = cy - tr.top;
+      if (!gon) {
+        gon = true; gx = tx; gy = ty;
+        pg.style.setProperty("--gt", (tr.top - pr.top).toFixed(0) + "px");
+        pg.style.setProperty("--gh", tr.height.toFixed(0) + "px");
+      }
+      var near = Math.max(0, 1 - Math.hypot(x - cx, y - cy) / 380);
+      pg.style.setProperty("--go", (0.26 * near * near).toFixed(3));
+      if (!graf) graf = requestAnimationFrame(glow);
+    };
     top.addEventListener("mousemove", function (e) {
+      if (pg && dot) aim(e.clientX, e.clientY);
       if (hraf) return;
       var x = e.clientX, y = e.clientY;
       hraf = requestAnimationFrame(function () {
@@ -79,6 +102,7 @@
       });
     });
     top.addEventListener("mouseleave", function () {
+      if (pg) { pg.style.setProperty("--go", "0"); gon = false; }
       if (hraf) { cancelAnimationFrame(hraf); hraf = 0; }
       chars.forEach(function (c) { setW(c, 0); });
     });
