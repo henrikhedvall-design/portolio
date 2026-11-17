@@ -245,7 +245,7 @@ NOT_FOUND = '''<!doctype html>
 <title>Page not found – Henrik Hedvall</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/base.css">
-<script>(function(){try{var t=sessionStorage.getItem("theme")||localStorage.getItem("theme");if(t==="dk"||t==="lt")document.documentElement.classList.add(t)}catch(e){}})();</script>
+<script>(function(){try{try{localStorage.removeItem("theme")}catch(e){}var t=sessionStorage.getItem("theme");if(t==="dk"||t==="lt")document.documentElement.classList.add(t)}catch(e){}})();</script>
 </head>
 <body>
 <main class="pg nf">
@@ -338,7 +338,7 @@ def build():
 <link rel="preload" href="{R}fonts/familjen-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{R}css/base.css">
 {page_css}<link rel="stylesheet" href="{R}css/site.css">
-<script>(function(){{try{{var t=sessionStorage.getItem("theme")||localStorage.getItem("theme");if(t==="dk"||t==="lt")document.documentElement.classList.add(t)}}catch(e){{}}}})();</script>
+<script>(function(){{try{{try{{localStorage.removeItem("theme")}}catch(e){{}}var t=sessionStorage.getItem("theme");if(t==="dk"||t==="lt")document.documentElement.classList.add(t)}}catch(e){{}}}})();</script>
 <noscript><style>.rv{{opacity:1!important}}.rv .zm,.rv .st,.rv .bl{{transform:none!important}}.rv .st span{{opacity:1!important}}.rv .ck path{{stroke-dashoffset:0!important}}.ic .s{{stroke-dashoffset:0!important}}.ic .nd{{transform:none!important}}</style></noscript>
 </head>
 <body data-rvt="{rvt}">

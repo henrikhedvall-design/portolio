@@ -14,7 +14,6 @@
     root.classList.remove("dk", "lt");
     root.classList.add(next);
     try { sessionStorage.setItem("theme", next); } catch (e) {}
-    try { localStorage.setItem("theme", next); } catch (e) {}
   });
 
   /* Scroll: reveal, header, progress bar, films, parallax */
