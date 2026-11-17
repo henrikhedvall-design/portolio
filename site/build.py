@@ -35,7 +35,7 @@ PAGES = [
     # source, output path, title, description, extra css, extra fonts, share image, reveal threshold
     ("main", "index.html", "Henrik Hedvall – Freelance product designer",
      "Freelance product designer with more than 15 years of experience, from agencies and startups to Klarna and Tink.",
-     "main.css", "", "oqto-hero.jpg", "0.85"),
+     "main.css", "", "share-start.jpg", "0.85"),
     ("oqto", "oqto/index.html", "Oqto product redesign and design system – Henrik Hedvall",
      "A redesign of Oqto’s accounting platform and mobile app, built on a new design system.",
      "oqto.css", "&amp;family=Geist+Mono:wght@500", "oqto-hero.jpg", "1.02"),
