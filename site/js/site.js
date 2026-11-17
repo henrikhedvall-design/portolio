@@ -85,7 +85,7 @@
         pg.style.setProperty("--gh", tr.height.toFixed(0) + "px");
       }
       var near = Math.max(0, 1 - Math.hypot(x - cx, y - cy) / 380);
-      pg.style.setProperty("--go", (0.26 * near * near).toFixed(3));
+      pg.style.setProperty("--go", (0.31 * near * near).toFixed(3));
       if (!graf) graf = requestAnimationFrame(glow);
     };
     top.addEventListener("mousemove", function (e) {
