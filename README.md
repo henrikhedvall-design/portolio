@@ -1,15 +1,19 @@
 # henrikhedvall.com
 
-Henrik Hedvall's portfolio, served by GitHub Pages from the `docs/` folder.
+Portfolio site for Henrik Hedvall, freelance product designer.
 
-The site is password protected: page content, images and films in `docs/` are encrypted, and the unencrypted source is kept elsewhere.
+- `docs/` is the published site, served by GitHub Pages at https://henrikhedvall.com.
+- `site/` is the source: pages, CSS, JavaScript, images, fonts and the build scripts.
 
-## Source backup
+## Build
 
-`source.enc` is an encrypted archive of the site's source (pages, CSS, JS, assets, fonts, build scripts). It is not served by GitHub Pages. Restore with the site password:
+    cd site
+    python3 build.py
 
-    openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in source.enc -out site-src.tar.gz
-    mkdir site && tar xzf site-src.tar.gz -C site
-    cd site && python3 build.py
+This writes the site to `site/docs/`. Copy that folder over `docs/` in the repository root and push to `main` to publish.
 
-Regenerate the archive after every change to the source.
+The build needs Python 3 with Pillow. It creates smaller WebP versions of the images in `site/_variants/` (a cache, not committed).
+
+## Password protection
+
+The site can be published behind a password again: put the password, a salt and the iteration count in `site/.secret.json` (never committed), set `PROTECT = True` in `build.py` and rebuild.

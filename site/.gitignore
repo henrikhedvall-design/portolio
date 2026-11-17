@@ -1,0 +1,5 @@
+.secret.json
+_plain/
+_variants/
+docs/
+__pycache__/

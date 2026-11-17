@@ -1,0 +1,21 @@
+.cal{position:relative;container-type:inline-size}
+.mk{position:absolute;top:48.95%;height:auto;transform:translate(-50%,-50%)}
+.mk.x{width:1.98cqw;fill:#fff;aspect-ratio:1}
+.mk.sk{width:2.27cqw;aspect-ratio:1;top:49.06%}
+@media (prefers-reduced-motion: no-preference){
+.mk{animation:8s cubic-bezier(.3,.7,.3,1) infinite both}
+.mk:nth-child(1){animation-name:m1}
+@keyframes m1{0%,7.5%{opacity:0;transform:translate(-50%,-50%) scale(.2)}10.7%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}13.1%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.mk:nth-child(2){animation-name:m2}
+@keyframes m2{0%,10.6%{opacity:0;transform:translate(-50%,-50%) scale(.2)}13.8%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}16.2%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.mk:nth-child(3){animation-name:m3}
+@keyframes m3{0%,13.7%{opacity:0;transform:translate(-50%,-50%) scale(.2)}16.9%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}19.3%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.mk:nth-child(4){animation-name:m4}
+@keyframes m4{0%,16.8%{opacity:0;transform:translate(-50%,-50%) scale(.2)}20.0%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}22.4%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.mk:nth-child(5){animation-name:m5}
+@keyframes m5{0%,19.9%{opacity:0;transform:translate(-50%,-50%) scale(.2)}23.1%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}25.5%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.mk:nth-child(6){animation-name:m6}
+@keyframes m6{0%,26%{opacity:0;transform:translate(-50%,-50%) scale(.2)}29.2%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}31.6%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.mk:nth-child(7){animation-name:m7}
+@keyframes m7{0%,29.5%{opacity:0;transform:translate(-50%,-50%) scale(.2)}32.7%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}35.1%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}93%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+}
