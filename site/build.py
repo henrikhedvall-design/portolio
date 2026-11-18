@@ -13,7 +13,7 @@ ASSETS = {
     "2e2296073c579610e979548d8ea65aec": "oqto-hero.jpg", "0445cbdf439d529c4528df06bde41d32": "tink-hero.jpg",
     "75508b9ec8aafed6d13291fd1dc33ed1": "tink-circle-a.png", "b995ecd141694efdc8b48696545bfc49": "tink-circle-b.png",
     "233ee65b2141d99bdbb6690980ede10f": "ww-hero.mp4", "e9707fabde6acdb8dac9fd62a9b1cd87": "ww-hero-poster.jpg",
-    "d476c1de7d4ebcd154be542a995a235d": "ww-hero.mp4", "07e1d0d6fa6239a51a8df2bc62c70bb5": "ww-hero-poster.jpg",
+    "d476c1de7d4ebcd154be542a995a235d": "ww-hero.mp4", "976879ef63486b34644bd1d3da83f9dd": "ww-hero.mp4", "07e1d0d6fa6239a51a8df2bc62c70bb5": "ww-hero-poster.jpg", "7d129ab7d08822063949654e82556f18": "ww-hero-poster.jpg",
     "16fa00db29608fb33f843c4995f7481c": "klarna.jpg", "e5bff79d085d4e0ec60e4a1f3527f37a": "qapital.jpg",
     "b7f02dd23c21bd09813d00f3d07ad053": "atlar.jpg", "c01776bc0bd7ccddd66d72ed605c93e0": "romo-bygg.jpg",
     "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg", "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
