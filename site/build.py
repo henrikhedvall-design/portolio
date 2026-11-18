@@ -293,11 +293,12 @@ def build():
         if f != "base.css":
             shutil.copyfile(os.path.join(ROOT, "css", f), os.path.join(DIST, "css", f))
     shutil.copytree(os.path.join(ROOT, "js"), os.path.join(DIST, "js"))
-    open(os.path.join(DIST, "favicon.svg"), "w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#F5F5F3"/><circle cx="16" cy="16" r="7" fill="#2F5D4B"/></svg>')
+    open(os.path.join(DIST, "favicon.svg"), "w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#F5F5F3"/><path d="M10 8h4v6h4V8h4v16h-4v-6h-4v6h-4z" fill="#2F5D4B"/></svg>')
     open(os.path.join(DIST, ".nojekyll"), "w").write("")
     from PIL import Image, ImageDraw
     icon = Image.new("RGB", (720, 720), "#F5F5F3")
-    ImageDraw.Draw(icon).ellipse((205, 205, 515, 515), fill="#2F5D4B")
+    for box in ((225, 180, 314, 539), (405, 180, 494, 539), (314, 315, 405, 404)):  # bold H, same proportions as favicon.svg
+        ImageDraw.Draw(icon).rectangle(box, fill="#2F5D4B")
     icon.resize((180, 180), Image.LANCZOS).save(os.path.join(DIST, "apple-touch-icon.png"))
     open(os.path.join(DIST, "404.html"), "w", encoding="utf-8").write(NOT_FOUND)
     if DOMAIN:
