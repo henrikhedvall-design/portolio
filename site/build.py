@@ -172,9 +172,11 @@ def m_hero(_=""):
         base = 700 if wi < 2 else 400
         sign = -1 if wi < 2 else 1
         chars = ""
-        for ch in wd:
+        for ci, ch in enumerate(wd):
             dot = wi == len(words) - 1 and ch == "."
-            chars += f'<span class="{"c dot" if dot else "c"}" data-c="{base},{sign}" style="font-weight: {base}">{ch}</span>'
+            # each letter is its own box, so the font's kerning pairs are lost; these two are the only pairs in the heading that have one
+            kern = {"ro": "-0.0767em", "r.": "-0.11em"}.get(wd[ci - 1:ci] + ch)   # .c already has margin 0 -.06em; the pair value (0.0167em, 0.05em) is added to that
+            chars += f'<span class="{"c dot" if dot else "c"}" data-c="{base},{sign}" style="font-weight: {base}{"; margin-left: " + kern if kern else ""}">{ch}</span>'
         out += f'<span aria-hidden="true" class="w" style="animation-delay: {wi * 90}ms">{chars}</span>'
         out += "<br>" if wi == 1 else (" " if wi != len(words) - 1 else "")
     return out
