@@ -17,13 +17,15 @@ img,video{display:block;width:100%;height:auto}
 .fc{position:absolute;left:83.6%;top:53.73%;width:6.15%;height:7.73%;background:#FAFAFA;color:#191970;pointer-events:none}
 .fc svg{position:absolute;left:8.13%;top:10.34%;width:85.4%;height:auto;overflow:visible;display:block}
 .fc .fp,.fc .fo,.fc .fm{transform-box:fill-box;transform-origin:center}
+.fv{position:absolute;left:26.781%;top:21.917%;width:21.969%;height:63.708%;border-radius:7.966%/3.663%;object-fit:cover;pointer-events:none}
+@media (prefers-reduced-motion: reduce){.fv{display:none}}
 @media (prefers-reduced-motion: no-preference){
-.rv.in .fc .fp{animation:fcP 4.6s infinite both}
-.rv.in .fc .fo{animation:fcO 4.6s infinite both}
-.rv.in .fc .fm{animation:fcM 4.6s infinite both}
-@keyframes fcP{0%,4.35%{opacity:0;transform:rotate(90deg);animation-timing-function:cubic-bezier(.2,0,0,1)}21.7%,30.4%{opacity:1;transform:rotate(0deg);animation-timing-function:cubic-bezier(.2,0,0,1)}50%,90%{opacity:1;transform:rotate(-180deg)}100%{opacity:0;transform:rotate(-180deg)}}
-@keyframes fcO{0%,4.35%{opacity:0;transform:translateX(12px);animation-timing-function:cubic-bezier(.2,0,0,1)}21.7%,90%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(0)}}
-@keyframes fcM{0%,4.35%{opacity:0;transform:translateY(8px);animation-timing-function:cubic-bezier(.2,0,0,1)}21.7%,30.4%{opacity:1;transform:translateY(0);animation-timing-function:cubic-bezier(.2,0,0,1)}50%,90%{opacity:1;transform:translateY(-3px)}100%{opacity:0;transform:translateY(-3px)}}
+.rv.in .fc .fp{animation:fcP 2.3s 600ms both}
+.rv.in .fc .fo{animation:fcO 2.3s 600ms both}
+.rv.in .fc .fm{animation:fcM 2.3s 600ms both}
+@keyframes fcP{0%,8.7%{opacity:0;transform:rotate(90deg);animation-timing-function:cubic-bezier(.2,0,0,1)}43.4%,60.8%{opacity:1;transform:rotate(0deg);animation-timing-function:cubic-bezier(.2,0,0,1)}100%{opacity:1;transform:rotate(-180deg)}}
+@keyframes fcO{0%,8.7%{opacity:0;transform:translateX(12px);animation-timing-function:cubic-bezier(.2,0,0,1)}43.4%,100%{opacity:1;transform:translateX(0)}}
+@keyframes fcM{0%,8.7%{opacity:0;transform:translateY(8px);animation-timing-function:cubic-bezier(.2,0,0,1)}43.4%,60.8%{opacity:1;transform:translateY(0);animation-timing-function:cubic-bezier(.2,0,0,1)}100%{opacity:1;transform:translateY(-3px)}}
 .rv{opacity:0;transition:opacity 1000ms ease}
 .rv.in{opacity:1}
 .rv .zm:not(.px){transform:scale(1.035);transition:transform 2000ms cubic-bezier(.16,.84,.24,1)}

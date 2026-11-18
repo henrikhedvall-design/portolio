@@ -13,6 +13,7 @@ ASSETS = {
     "2e2296073c579610e979548d8ea65aec": "oqto-hero.jpg", "0445cbdf439d529c4528df06bde41d32": "tink-hero.jpg",
     "75508b9ec8aafed6d13291fd1dc33ed1": "tink-circle-a.png", "b995ecd141694efdc8b48696545bfc49": "tink-circle-b.png",
     "233ee65b2141d99bdbb6690980ede10f": "ww-hero.mp4", "e9707fabde6acdb8dac9fd62a9b1cd87": "ww-hero-poster.jpg",
+    "d476c1de7d4ebcd154be542a995a235d": "ww-hero.mp4", "07e1d0d6fa6239a51a8df2bc62c70bb5": "ww-hero-poster.jpg",
     "16fa00db29608fb33f843c4995f7481c": "klarna.jpg", "e5bff79d085d4e0ec60e4a1f3527f37a": "qapital.jpg",
     "b7f02dd23c21bd09813d00f3d07ad053": "atlar.jpg", "c01776bc0bd7ccddd66d72ed605c93e0": "romo-bygg.jpg",
     "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg", "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
@@ -28,6 +29,8 @@ ASSETS = {
     "f414974410411ce49392f4c3414bf53b": "ww-identity.png", "efab65d4d433ed4ba4f636274f9a9e99": "ww-calendar.jpg",
     "d7569c8d5cc400fd7471c27a4c2b9144": "ww-calendar-full.jpg", "dd36df8f9b4a2f8280afd473ea40f9b3": "ww-skier.png",
     "3b0aba6df729159ddd92d895620fe94c": "ww-chapter.mp4", "27f8f596ff1426df0556b45195ddebe2": "ww-chapter-poster.jpg",
+    "220ec7629fb9c909faecfd6466c52d39": "ww-chapter.mp4", "dd4b783c3cc9d8ee0fd9f34945bd129d": "ww-chapter-poster.jpg",
+    "76d0c58a339e252ae62ff5001f075ec3": "reda-invoice.mp4",
     "c559b303cef21837a8244d9c09d533e3": "sas.jpg",
 }
 
@@ -147,12 +150,15 @@ def m_next(href, title, sub):
 
 REDA_FACE = '''<div class="fc" aria-hidden="true"><svg viewBox="0 0 96 86.4" focusable="false"><g class="fp"><path d="M41.12 16H0V24.8H41.12V16Z" fill="currentColor"></path><path d="M24.8 0H16V41.12H24.8V0Z" fill="currentColor"></path></g><path class="fo" d="M96.16 16H58V24.8H96.16V16Z" fill="currentColor"></path><path class="fm" d="M3 56C11.4 74.08 27.4 86.08 48.04 86.08C69 86.08 85 74.08 93.08 56H83.4C77 68.48 65.8 77.28 48.04 77.28C30.6 77.28 19 68.48 12.68 56H3Z" fill="currentColor"></path></svg></div>'''
 
+REDA_FILM = '<video class="fv dt" data-vid="1" src="[[A]]reda-invoice.mp4" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>'
+
 
 def m_fig(n, file, alt, name, meta, extra=""):
-    """A More work tile. extra="face" lays the animated Reda face over the last phone in the image."""
+    """A More work tile. extra="face" is the Reda tile: a short film of the invoice sheet plays on the second phone,
+    and the face on the last phone animates in."""
     img = f'<img class="zm" src="[[A]]{file}" alt="{alt}" width="2000" height="1500">'
     if extra == "face":
-        img = f'<div class="zm fw"><img src="[[A]]{file}" alt="{alt}" width="2000" height="1500">{REDA_FACE}</div>'
+        img = f'<div class="zm fw"><img src="[[A]]{file}" alt="{alt}" width="2000" height="1500">{REDA_FILM}{REDA_FACE}</div>'
     return f'''<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px">
 <div {m_rv(n, "; background: #E7E7E3")}>{img}</div>
 <figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; font-size: 16px"><span>{name}</span><span style="color: #5E5E5A">{meta}</span></figcaption>

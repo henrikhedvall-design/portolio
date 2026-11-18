@@ -1,0 +1,105 @@
+<!doctype html><meta charset="utf-8">
+<style>html,body{margin:0;background:#000}#stage{position:relative;width:2640px;height:1650px;overflow:hidden}#stage img,#stage svg{position:absolute;inset:0;display:block;width:100%;height:100%}</style>
+<div id="stage"><img id="bg" src="bg.png"><div id="ink"></div></div>
+<script src="logos.js"></script>
+<script>
+/* Stand-alone render of the chapter title, following the write-on in the "Weekend warrior logos" canvas
+   (logo-sketch.jsx): same letter order, pen, pace, zoom and fades. Only the placement differs: the lettering
+   is fitted to where it sits in the Figma frame "WW / 4 – Kapitel". */
+var W = 2640, H = 1650, KEY = 'venjetind';
+var INK = '#FFFFFF', TEXT = '#1AEBFF', STROKE_WIDTH = 53;
+/* setup({...}) switches to another lettering, size, colours or placement; bg:false hides the background image so the lettering can be captured with transparency. */
+function setup(c) { if (c.W) { W = c.W; H = c.H; var st = document.getElementById('stage'); st.style.width = W + 'px'; st.style.height = H + 'px'; } if (c.key) KEY = c.key; if (c.ink) INK = c.ink; if (c.text) TEXT = c.text; if (c.stroke) STROKE_WIDTH = c.stroke; if (c.fit) FIT = c.fit; if (c.bg === false) { document.getElementById('bg').style.display = 'none'; document.documentElement.style.background = document.body.style.background = 'transparent'; } }
+var SCENES = [{name:'Paper',dur:0.3,nat:0.5},{name:'Draw',dur:1.8,nat:1.8},{name:'Hold',dur:2,nat:1.4},{name:'Fade',dur:0.9,nat:0.7}];
+var FIT = {x: 823 * 0.825, y: 602 * 0.825, w: 1554 * 0.825, h: 553 * 0.825};   // the lettering group in the Figma frame
+var E = {linear:function(t){return t}, easeInOutSine:function(t){return -(Math.cos(Math.PI*t)-1)/2}};
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function animate(o){return function(T){var p=clamp((T-o.start)/(o.end-o.start),0,1);return o.from+(o.to-o.from)*o.ease(p)}}
+var CUES = {}, END = 0, PLAY = 0;
+SCENES.forEach(function(s){CUES[s.name]=END; s.a0=END; s.p0=PLAY; END+=s.nat; PLAY+=s.dur;});
+function authored(t){ for (var i=0;i<SCENES.length;i++){var s=SCENES[i]; if (t < s.p0+s.dur || i===SCENES.length-1) return s.a0 + clamp((t-s.p0)/s.dur,0,1)*s.nat;} }
+var GEO = {};
+function measure(key) {
+  if (GEO[key]) return GEO[key];
+  var logo = window.LOGOS[key], ns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', '0 0 ' + logo.vb[0] + ' ' + logo.vb[1]);
+  svg.setAttribute('style', 'position:absolute;width:0;height:0;opacity:0;pointer-events:none');
+  document.body.appendChild(svg);
+  var subs = [];
+  logo.yellow.forEach(function (d, pi) {
+    d.split(/(?=M)/).forEach(function (sd) {
+      if (!sd.trim()) return;
+      var p = document.createElementNS(ns, 'path'); p.setAttribute('d', sd); svg.appendChild(p);
+      var b = p.getBBox();
+      subs.push({ d: sd, p: p, b: b, pi: pi, area: b.width * b.height, holes: [] });
+    });
+  });
+  var inside = function (a, o) { return a !== o && a.pi === o.pi && a.b.x >= o.b.x - 0.5 && a.b.y >= o.b.y - 0.5 && a.b.x + a.b.width <= o.b.x + o.b.width + 0.5 && a.b.y + a.b.height <= o.b.y + o.b.height + 0.5 && a.area < o.area; };
+  var outers = subs.filter(function (s) { return !subs.some(function (o) { return inside(s, o); }); });
+  subs.forEach(function (s) {
+    var parent = null;
+    outers.forEach(function (o) { if (inside(s, o) && (!parent || o.area < parent.area)) parent = o; });
+    if (parent) parent.holes.push(s.d);
+  });
+  var items = outers.map(function (s, i) {
+    var p = s.p, b = s.b, d = s.d, len = p.getTotalLength(), s0 = 0, best = Infinity;
+    for (var k = 0; k < 240; k++) { var q = p.getPointAtLength(len * k / 240), score = q.x + q.y; if (score < best) { best = score; s0 = len * k / 240; } }
+    return { i: i, d: d, fillD: d + ' ' + s.holes.join(' '), len: len, s0: s0, small: b.width < 40 && b.height < 40, x: b.x, x1: b.x + b.width, w: b.width, y0: b.y, y1: b.y + b.height };
+  });
+  items.sort(function (a, b) { return a.x - b.x; });
+  var above = function (m, s) { return m !== s && m.len < s.len * 0.5 && m.y1 <= s.y0 + 4 && m.x < s.x1 && (m.x + (m.x1 - m.x)) > s.x; };
+  var ordered = [];
+  items.forEach(function (s) {
+    items.forEach(function (m) { if (above(m, s) && ordered.indexOf(m) < 0) { m.base = s; ordered.push(m); } });
+    if (ordered.indexOf(s) < 0) ordered.push(s);
+  });
+  items = ordered;
+  var total = 0;
+  var rnd = function (i) { var x = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return x - Math.floor(x); };
+  items.forEach(function (it, i) {
+    var pace = 0.85 + rnd(i) * 0.3;
+    it.start = total; it.dur = it.base ? it.base.len * pace : it.len * pace; it.end = it.start + it.dur;
+    if (!it.base) total += it.dur + it.len * (0.03 + rnd(i + 7) * 0.05);
+  });
+  total += items.length ? items[items.length - 1].len * 0.03 : 0;
+  var y0 = Math.min.apply(null, items.map(function (it) { return it.y0; })), y1 = Math.max.apply(null, items.map(function (it) { return it.y1; }));
+  // bounding box of everything (script and small text), used only to place the lettering
+  var bb = null;
+  logo.yellow.concat(logo.white).forEach(function (d) { var p = document.createElementNS(ns, 'path'); p.setAttribute('d', d); svg.appendChild(p); var b = p.getBBox();
+    bb = bb ? {x0: Math.min(bb.x0, b.x), y0: Math.min(bb.y0, b.y), x1: Math.max(bb.x1, b.x + b.width), y1: Math.max(bb.y1, b.y + b.height)} : {x0: b.x, y0: b.y, x1: b.x + b.width, y1: b.y + b.height}; });
+  GEO[key] = { items: items, total: total, white: logo.white, vb: logo.vb, letterH: (y1 - y0) || 267, bb: bb };
+  return GEO[key];
+}
+function frame(t) {
+  var T = authored(t), geo = measure(KEY), items = geo.items, ref = measure('wordmark');
+  var rel = (geo.total / geo.letterH) / (ref.total / ref.letterH);
+  var drawEnd = CUES.Draw + (CUES.Hold - CUES.Draw) * Math.min(1, rel);
+  var prog = animate({from:0,to:1,start:CUES.Draw,end:drawEnd,ease:E.linear})(T), cursor = prog * geo.total;
+  var paperIn = animate({from:0,to:1,start:0,end:0.4,ease:E.easeInOutSine})(T);
+  var zoom = animate({from:1.1,to:1,start:0,end:END,ease:E.linear})(T);
+  var fadeOut = animate({from:1,to:0,start:CUES.Fade,end:END-0.1,ease:E.easeInOutSine})(T);
+  var textIn = animate({from:0,to:1,start:drawEnd-0.15,end:drawEnd+0.5,ease:E.easeInOutSine})(T);
+  var vbW = geo.vb[0], vbH = geo.vb[1], bb = geo.bb;
+  var S = Math.min(FIT.w / (bb.x1 - bb.x0), FIT.h / (bb.y1 - bb.y0));
+  // the zoom pivots on the middle of the artboard, as in the canvas; that point is placed so the lettering lands in FIT at zoom 1
+  var px = FIT.x + FIT.w / 2 + (vbW / 2 - (bb.x0 + bb.x1) / 2) * S, py = FIT.y + FIT.h / 2 + (vbH / 2 - (bb.y0 + bb.y1) / 2) * S;
+  var strokeW = STROKE_WIDTH * geo.letterH / 267;
+  var defs = '', fills = '';
+  items.forEach(function (it) {
+    var dash = function (q) { return 'stroke-dasharray:' + (it.len * q) + ' ' + (it.len * (1 - q)) + ';stroke-dashoffset:' + (-(it.s0 - it.len * q / 2)); };
+    var p = E.easeInOutSine(clamp((cursor - it.start) / it.dur, 0, 1));
+    var pen = Math.min(0.62, p * 0.62 / 0.78), trail = Math.min(1, Math.max(0, p - 0.12) / 0.88), done = p >= 0.995;
+    var penW = strokeW * (it.small ? 0.9 : 2.0) * (1 + 0.14 * Math.sin(Math.PI * Math.min(1, p / 0.78)));
+    var st = function (w, op, q) { return '<path d="' + it.d + '" fill="none" stroke="#fff" stroke-width="' + w + '" opacity="' + op + '" stroke-linecap="round" stroke-linejoin="round" style="' + dash(q) + '"/>'; };
+    defs += '<mask id="b' + it.i + '" maskUnits="userSpaceOnUse" x="' + (-vbW) + '" y="' + (-vbH) + '" width="' + (vbW * 3) + '" height="' + (vbH * 3) + '">' +
+      st(penW, p > 0.001 ? 0.18 : 0, Math.min(0.62, pen + 0.03)) + st(penW, p > 0.001 ? 0.45 : 0, Math.min(0.62, pen + 0.015)) + st(penW, p > 0.001 ? 1 : 0, pen) +
+      st(strokeW * 1.4, trail > 0.001 ? 1 : 0, trail) + '<path d="' + it.d + '" fill="#fff" opacity="' + (done ? 1 : 0) + '"/></mask>';
+    fills += '<path d="' + it.fillD + '" fill-rule="evenodd" fill="' + INK + '" mask="url(#b' + it.i + ')"/>';
+  });
+  var whites = geo.white.map(function (d) { return '<path d="' + d + '" fill="' + TEXT + '"/>'; }).join('');
+  document.getElementById('ink').innerHTML = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" style="opacity:' + paperIn + '"><defs>' + defs + '</defs>' +
+    '<g transform="translate(' + px + ' ' + py + ') scale(' + (S * zoom) + ') translate(' + (-vbW / 2) + ' ' + (-vbH / 2) + ')" opacity="' + fadeOut + '"><g>' + fills + '</g><g opacity="' + textIn + '">' + whites + '</g></g></svg>';
+  return {T: T, rel: rel, drawEnd: drawEnd, prog: prog, zoom: zoom, fadeOut: fadeOut, textIn: textIn, items: items.length, S: S};
+}
+</script>
