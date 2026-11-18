@@ -18,7 +18,7 @@
 .sw i{top:15%;left:50%;width:41.18%;aspect-ratio:1;border-radius:50%;background:#fff}
 .ck{left:71.278%;top:76.72%;width:2.134%;overflow:visible;fill:none;stroke:#fff;stroke-width:12.8;stroke-linecap:round;stroke-linejoin:round}
 .ck path{stroke-dasharray:1;stroke-dashoffset:0}
-.ld .li{position:absolute;inset:0;height:100%;clip-path:polygon(0 0,53.125% 0,31.25% 100%,0 100%)}
+.ld .li{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);clip-path:polygon(0 0,53.125% 0,31.25% 100%,0 100%)}
 .cl{display:flex;aspect-ratio:16/10;container-type:inline-size}
 .st{position:relative;transform-origin:50% 100%}
 .s1{flex:0 0 37.5%;background:#F1EFEC}.s2{flex:0 0 20%;background:#D7E9FB}.s3{flex:0 0 10%;background:#FF6319}.s4{flex:1 0 0;background:#160D0B}
