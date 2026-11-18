@@ -15,7 +15,7 @@ ASSETS = {
     "233ee65b2141d99bdbb6690980ede10f": "ww-hero.mp4", "e9707fabde6acdb8dac9fd62a9b1cd87": "ww-hero-poster.jpg",
     "d476c1de7d4ebcd154be542a995a235d": "ww-hero.mp4", "976879ef63486b34644bd1d3da83f9dd": "ww-hero.mp4", "07e1d0d6fa6239a51a8df2bc62c70bb5": "ww-hero-poster.jpg", "7d129ab7d08822063949654e82556f18": "ww-hero-poster.jpg",
     "16fa00db29608fb33f843c4995f7481c": "klarna.jpg", "e5bff79d085d4e0ec60e4a1f3527f37a": "qapital.jpg",
-    "b7f02dd23c21bd09813d00f3d07ad053": "atlar.jpg", "c01776bc0bd7ccddd66d72ed605c93e0": "romo-bygg.jpg",
+    "b7f02dd23c21bd09813d00f3d07ad053": "atlar.jpg", "04af04a40b5e649ddbb3c42f2d96d577": "atlar.jpg", "c01776bc0bd7ccddd66d72ed605c93e0": "romo-bygg.jpg",
     "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg", "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
     "aa1eb67f8c8be2493bbfd4aa54762e37": "oqto-type.jpg", "471465112e013b29ffcea0fa0ea3b559": "oqto-components.jpg",
     "c34dd534a3003ee261711ca87890d62c": "oqto-dark.jpg", "b7a1f7ae78d363ddf79c024ff4bfa8f4": "oqto-light.jpg",
