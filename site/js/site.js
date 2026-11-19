@@ -26,7 +26,7 @@
     var y = window.scrollY || se.scrollTop || 0;
     $$("[data-rv]:not(.in)").forEach(function (el) {
       var r = el.getBoundingClientRect();
-      if (r.top < h * rvt && r.bottom > 0) { el.classList.add("in"); if (el.hasAttribute("data-sl")) nudge(); }
+      if (r.top < h * rvt && r.bottom > 0) { el.classList.add("in"); }
     });
     $$("[data-svc]:not([data-on])").forEach(function (el) {
       var r = el.getBoundingClientRect();
@@ -105,52 +105,6 @@
       if (pg) { pg.style.setProperty("--go", "0"); gon = false; }
       if (hraf) { cancelAnimationFrame(hraf); hraf = 0; }
       chars.forEach(function (c) { setW(c, 0); });
-    });
-  }
-
-  /* Before/after slider */
-  var sl = $("[data-sl]"), pos = 50, drag = null, pend = null, n1, n2, n3;
-  function setPos(p, ez) {
-    pos = Math.max(0, Math.min(100, p));
-    sl.classList.toggle("ez", !!ez);
-    $(".bf", sl).style.clipPath = "inset(0 " + (100 - pos).toFixed(3) + "% 0 0)";
-    $(".hd", sl).style.left = pos.toFixed(3) + "%";
-    var tg = $$(".tg", sl);
-    tg[0].style.opacity = pos > 12 ? 1 : 0;
-    tg[1].style.opacity = pos < 88 ? 1 : 0;
-    $(".kb", sl).setAttribute("aria-valuenow", String(Math.round(pos)));
-  }
-  function posAt(x) { var r = sl.getBoundingClientRect(); if (r.width) setPos(((x - r.left) / r.width) * 100, false); }
-  function nudge() {
-    if (still || !sl) return;
-    n1 = setTimeout(function () { setPos(64, true); }, 700);
-    n2 = setTimeout(function () { setPos(50, true); }, 1800);
-    n3 = setTimeout(function () { sl.classList.remove("ez"); }, 2900);
-  }
-  if (sl) {
-    d.addEventListener("pointerdown", function (e) {
-      if (lb || !e.target.closest || !e.target.closest("[data-sl]")) return;
-      clearTimeout(n1); clearTimeout(n2); clearTimeout(n3);
-      if (e.pointerType === "mouse") { drag = sl; posAt(e.clientX); e.preventDefault(); return; }
-      pend = { x: e.clientX, y: e.clientY };
-    });
-    window.addEventListener("pointermove", function (e) {
-      if (pend) {
-        var dx = Math.abs(e.clientX - pend.x), dy = Math.abs(e.clientY - pend.y);
-        if (dx > 6 && dx > dy) { drag = sl; pend = null; }
-        else if (dy > 10) pend = null;
-      }
-      if (drag) posAt(e.clientX);
-    });
-    var end = function (e) { if (pend && e.type === "pointerup") posAt(e.clientX); pend = null; drag = null; };
-    window.addEventListener("pointerup", end);
-    window.addEventListener("pointercancel", end);
-    d.addEventListener("keydown", function (e) {
-      if (lb || !e.target.closest || !e.target.closest("[data-kb]")) return;
-      var k = { ArrowLeft: -4, ArrowRight: 4, Home: -100, End: 100 }[e.key];
-      if (!k) return;
-      e.preventDefault();
-      setPos(pos + k, false);
     });
   }
 

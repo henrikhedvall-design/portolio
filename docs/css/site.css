@@ -23,8 +23,6 @@
 .c-34375b{flex: 1 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 24px}
 .c-media{overflow: hidden; background: #E7E7E3}
 .c-f92d9a{display: block; width: 100%; height: auto}
-.c-f8671b{left: 13.969%}
-.c-02d12d{left: 23.741%}
 .c-66ebb6{display: flex; flex-direction: column; gap: 8px}
 .c-h3{margin: 0; font-size: clamp(23px, 2.3vw, 32px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.2}
 .c-623d69{margin: 0; max-width: 36em; color: #5E5E5A; text-wrap: pretty}
@@ -82,8 +80,7 @@
 .c-step-text{margin: 0; max-width: 32em; color: #5E5E5A; text-wrap: pretty}
 .c-grid2{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px}
 .c-step-label{flex: 0 1 300px; font-size: 16px; color: var(--accent); font-variant-numeric: tabular-nums}
-.c-40108b{left: 16px}
-.c-fbd76d{right: 16px}
+.c-e239d3{background-image: url(../assets/oqto-autopilot-card.webp)}
 .c-sec-end{padding: 20px 0 clamp(72px, 8vw, 120px); border-top: 1px solid #D9D9D4; display: flex; flex-wrap: wrap; gap: 32px 24px}
 .c-next-link{align-self: flex-start; font-size: clamp(36px, 6vw, 88px); line-height: 1.02; font-weight: 500; letter-spacing: -0.04em; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px}
 .c-contact-body{flex: 1 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: clamp(23px, 2.6vw, 36px); line-height: 1.22; letter-spacing: -0.025em}
