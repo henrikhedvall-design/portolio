@@ -28,10 +28,12 @@ ASSETS = {
     "1985dbdba6e3530443f5df8e166f4dcd": "tink-screens.jpg", "8b01cacb59ff02a59f0974ee3934b25e": "tink-screens.jpg", "ac8a5f15eb231d84428fc1641a1aa236": "tink-dark.jpg",
     "f414974410411ce49392f4c3414bf53b": "ww-identity.png", "efab65d4d433ed4ba4f636274f9a9e99": "ww-calendar.jpg",
     "d7569c8d5cc400fd7471c27a4c2b9144": "ww-calendar-full.jpg", "dd36df8f9b4a2f8280afd473ea40f9b3": "ww-skier.png",
+    "2788faab4aa5f42e2f2ca72c1315c161": "ww-calendar.jpg", "23288ad0ee329575c8589474e7c30676": "ww-calendar-full.jpg",
     "3b0aba6df729159ddd92d895620fe94c": "ww-chapter.mp4", "27f8f596ff1426df0556b45195ddebe2": "ww-chapter-poster.jpg",
     "220ec7629fb9c909faecfd6466c52d39": "ww-chapter.mp4", "dd4b783c3cc9d8ee0fd9f34945bd129d": "ww-chapter-poster.jpg",
     "9ffa3ed1de920fde7273fe2fe27b9399": "ww-chapter.mp4", "4d33343efbf915006e8ab6ce4fa5d9c6": "ww-chapter-poster.jpg",
     "3d06dd886f13b0f23664e9310a1f4aa1": "ww-chapter.mp4", "d0029e299ca31e8e231096be68904edd": "ww-chapter-poster.jpg",
+    "c8bd8f19353c8198c8afde9cd17068cc": "ww-hero.mp4", "2822d4919f4f642a69ad10a10deeb4ad": "ww-chapter.mp4",
     "76d0c58a339e252ae62ff5001f075ec3": "reda-invoice.mp4",
     "c559b303cef21837a8244d9c09d533e3": "sas.jpg",
 }
