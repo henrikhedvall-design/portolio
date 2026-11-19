@@ -19,7 +19,7 @@ ASSETS = {
     "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg", "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
     "aa1eb67f8c8be2493bbfd4aa54762e37": "oqto-type.jpg", "471465112e013b29ffcea0fa0ea3b559": "oqto-components.jpg",
     "c34dd534a3003ee261711ca87890d62c": "oqto-dark.jpg", "b7a1f7ae78d363ddf79c024ff4bfa8f4": "oqto-light.jpg",
-    "c34b591a7f8fddf09f75926bdbe9cb4d": "oqto-screens.jpg", "9aed89d8ef290ab64dbcbde6ca8f4fda": "oqto-screens.jpg", "a67261e7335ce425f5cbf03bea56eee6": "oqto-after.jpg",
+    "c34b591a7f8fddf09f75926bdbe9cb4d": "oqto-screens.jpg", "9aed89d8ef290ab64dbcbde6ca8f4fda": "oqto-screens.jpg", "6f9deb035305d822828b08e689c25451": "oqto-screens.jpg", "a67261e7335ce425f5cbf03bea56eee6": "oqto-after.jpg",
     "24c4ba42e7d66d0e7984402ead110cda": "oqto-before.jpg", "a06f2b58758b6fb555fed11e960a2e03": "oqto-app.jpg",
     "637462e7e8cb1a3e784b541fafad197d": "tink-logo.jpg", "d231f1039acc7b8c33ee891994a401d8": "tink-logo.jpg", "6e3a6e0409bc43d9788ccd3c57f38416": "tink-colours.jpg",
     "8ccadca1c7c70a65154867eb4540ba2f": "tink-poster.jpg", "9a65abafdb9345d5e481ffe969c22879": "tink-type.jpg",
