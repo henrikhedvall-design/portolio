@@ -7,7 +7,7 @@
    (logo-sketch.jsx): same letter order, pen, pace, zoom and fades. Only the placement differs: the lettering
    is fitted to where it sits in the Figma frame "WW / 4 – Kapitel". */
 var W = 2640, H = 1650, KEY = 'venjetind';
-var INK = '#FFFFFF', TEXT = '#1AEBFF', STROKE_WIDTH = 53;
+var INK = '#1D0930', TEXT = '#1AEBFF', STROKE_WIDTH = 53;
 /* setup({...}) switches to another lettering, size, colours or placement; bg:false hides the background image so the lettering can be captured with transparency. */
 function setup(c) { if (c.W) { W = c.W; H = c.H; var st = document.getElementById('stage'); st.style.width = W + 'px'; st.style.height = H + 'px'; } if (c.key) KEY = c.key; if (c.ink) INK = c.ink; if (c.text) TEXT = c.text; if (c.stroke) STROKE_WIDTH = c.stroke; if (c.fit) FIT = c.fit; if (c.bg === false) { document.getElementById('bg').style.display = 'none'; document.documentElement.style.background = document.body.style.background = 'transparent'; } }
 var SCENES = [{name:'Paper',dur:0.3,nat:0.5},{name:'Draw',dur:1.8,nat:1.8},{name:'Hold',dur:2,nat:1.4},{name:'Fade',dur:0.9,nat:0.7}];

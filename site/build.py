@@ -30,6 +30,8 @@ ASSETS = {
     "d7569c8d5cc400fd7471c27a4c2b9144": "ww-calendar-full.jpg", "dd36df8f9b4a2f8280afd473ea40f9b3": "ww-skier.png",
     "3b0aba6df729159ddd92d895620fe94c": "ww-chapter.mp4", "27f8f596ff1426df0556b45195ddebe2": "ww-chapter-poster.jpg",
     "220ec7629fb9c909faecfd6466c52d39": "ww-chapter.mp4", "dd4b783c3cc9d8ee0fd9f34945bd129d": "ww-chapter-poster.jpg",
+    "9ffa3ed1de920fde7273fe2fe27b9399": "ww-chapter.mp4", "4d33343efbf915006e8ab6ce4fa5d9c6": "ww-chapter-poster.jpg",
+    "3d06dd886f13b0f23664e9310a1f4aa1": "ww-chapter.mp4", "d0029e299ca31e8e231096be68904edd": "ww-chapter-poster.jpg",
     "76d0c58a339e252ae62ff5001f075ec3": "reda-invoice.mp4",
     "c559b303cef21837a8244d9c09d533e3": "sas.jpg",
 }
