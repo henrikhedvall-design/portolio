@@ -189,7 +189,7 @@ def m_hero(_=""):
 
 
 SVC_ICONS = [
-    '<g class="spin"><g class="turn"><path class="s" d="M12 4v16" pathLength="1"></path><path class="s dl" d="M4 12h16" pathLength="1"></path></g></g><circle class="nd" cx="19" cy="5" r="2.6"></circle>',
+    '<path class="s ap" d="M17.5 10.5v5.9a3.6 3.6 0 0 1-3.6 3.6H7.6A3.6 3.6 0 0 1 4 16.4v-6.3a3.6 3.6 0 0 1 3.6-3.6h5.9" pathLength="1"></path><circle class="nd" cx="18" cy="6" r="2.6"></circle>',
     '<path class="s k dm d1" d="M12 3l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d2" d="M6.4 8.6l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d3" d="M17.6 8.6l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d4" d="M12 14.2l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path>',
     '<path class="s cv" d="M4.5 19.5C11 19.5 11 5 19.5 5" pathLength="1"></path><path class="s hl" d="M19.5 5H12.4" pathLength="1"></path><circle class="s kb" cx="11" cy="5" r="1.4" pathLength="1"></circle><circle class="nd g st" cx="4.5" cy="19.5" r="2.4"></circle><rect class="nd st" x="17.4" y="2.9" width="4.2" height="4.2" rx="1.1"></rect>',
     '<path class="nd bt" d="M7.4 14l3.7 6.4H3.7z" style="stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round"></path><circle class="s bc" cx="12" cy="7.7" r="3.4" pathLength="1"></circle><rect class="s bs" x="14" y="13.6" width="6.8" height="6.8" rx="1.1" pathLength="1" style="transition-delay: 200ms"></rect>',
