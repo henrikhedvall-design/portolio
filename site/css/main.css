@@ -84,9 +84,9 @@ footer.bleed{clip-path:inset(-2px -100vmax 0)}
 .ic .hl{d:path("M19.5 5H12.4");transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1) 500ms,d 650ms cubic-bezier(.2,.7,.2,1)}
 .ic .kb{transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1) 700ms,transform 650ms cubic-bezier(.2,.7,.2,1)}
 @supports (d: path("M0 0")){
-.svc-row:hover .ic.in .cv{d:path("M4.5 19.5C11 19.5 7 5 19.5 5")}
-.svc-row:hover .ic.in .hl{d:path("M19.5 5H8.4")}
-.svc-row:hover .ic.in .kb{transform:translateX(-4px)}
+.svc-row:hover .ic.in .cv{d:path("M4.5 19.5C11 19.5 4 5 19.5 5")}
+.svc-row:hover .ic.in .hl{d:path("M19.5 5H5.4")}
+.svc-row:hover .ic.in .kb{transform:translateX(-7px)}
 }
 .ic .nd{fill:var(--accent);transform-box:fill-box;transform-origin:50% 50%;transform:scale(0);transition:transform 600ms cubic-bezier(.34,1.56,.64,1) 900ms}
 .ic.in .nd{transform:scale(1)}
@@ -107,6 +107,18 @@ footer.bleed{clip-path:inset(-2px -100vmax 0)}
 .ic.in .r{animation:inR 900ms cubic-bezier(.2,.7,.2,1) 1000ms backwards}
 @keyframes inL{from{transform:translateX(-3.5px)}to{transform:none}}
 @keyframes inR{from{transform:translateX(3.5px)}to{transform:none}}
+.ic .bt{transform-origin:50% 66.67%}
+.ic .bc,.ic .bs{transform-box:fill-box;transform-origin:50% 50%}
+@media (prefers-reduced-motion: no-preference){
+.ic.in .bs{animation:bsIn 900ms cubic-bezier(.2,.7,.2,1) 500ms backwards}
+.svc-row:hover .ic.in .bt{animation:btS 750ms cubic-bezier(.3,1.35,.5,1) both}
+.svc-row:hover .ic.in .bs{animation:bsS 750ms cubic-bezier(.3,1.35,.5,1) 90ms both}
+.svc-row:hover .ic.in .bc{animation:bcH 620ms cubic-bezier(.3,0,.3,1) 180ms both}
+@keyframes bsIn{from{transform:rotate(-90deg)}to{transform:none}}
+@keyframes btS{from{transform:none}to{transform:rotate(120deg)}}
+@keyframes bsS{from{transform:none}to{transform:rotate(90deg)}}
+@keyframes bcH{0%,100%{transform:none}42%{transform:translateY(-2.6px)}}
+}
 .svc-row:hover .ic.in .l{transform:translateX(-1.5px);transition-duration:1100ms,700ms}
 .svc-row:hover .ic.in .r{transform:translateX(1.5px);transition-duration:1100ms,700ms}
 @media (prefers-reduced-motion: reduce){.ic .s{stroke-dasharray:none;stroke-dashoffset:0;transition:none}.svc-row:hover .ic.in .nd,.ic .nd{transform:none;animation:none;transition:none}.ic .spin,.ic.in .spin,.svc-row:hover .ic.in .turn{animation:none;transform:none}.ic .l,.ic .r,.ic.in .l,.ic.in .r,.svc-row:hover .ic.in .l,.svc-row:hover .ic.in .r{transform:none;transition:none;animation:none}}

@@ -186,7 +186,7 @@ SVC_ICONS = [
     '<g class="spin"><g class="turn"><path class="s" d="M12 4v16" pathLength="1"></path><path class="s dl" d="M4 12h16" pathLength="1"></path></g></g><circle class="nd" cx="19" cy="5" r="2.6"></circle>',
     '<path class="s k dm d1" d="M12 3l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d2" d="M6.4 8.6l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d3" d="M17.6 8.6l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d4" d="M12 14.2l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path>',
     '<path class="s cv" d="M4.5 19.5C11 19.5 11 5 19.5 5" pathLength="1"></path><path class="s hl" d="M19.5 5H12.4" pathLength="1"></path><circle class="s kb" cx="11" cy="5" r="1.4" pathLength="1"></circle><circle class="nd g st" cx="4.5" cy="19.5" r="2.4"></circle><rect class="nd st" x="17.4" y="2.9" width="4.2" height="4.2" rx="1.1"></rect>',
-    '<circle class="s l" cx="9" cy="12" r="5.5" pathLength="1"></circle><circle class="s r k" cx="15" cy="12" r="5.5" pathLength="1"></circle>',
+    '<path class="nd bt" d="M12 3.8l3.7 6.4H8.3z" style="stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round"></path><circle class="s bc" cx="7.4" cy="17" r="3.4" pathLength="1"></circle><rect class="s bs" x="14" y="13.6" width="6.8" height="6.8" rx="1.1" pathLength="1" style="transition-delay: 200ms"></rect>',
 ]
 
 

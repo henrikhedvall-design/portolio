@@ -44,6 +44,8 @@
 .c-svc-head{display: flex; align-items: flex-start; gap: 16px; font-size: clamp(21px, 1.9vw, 26px)}
 .c-body-muted{margin: 0; color: #5E5E5A; text-wrap: pretty}
 .c-6560a6{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px 24px; padding: 28px 0; border-top: 1px solid #D9D9D4}
+.c-73754b{stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round}
+.c-49e06b{transition-delay: 200ms}
 .c-84e55a{flex: 1 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 48px 24px; align-items: start}
 .c-241d5d{display: flex; flex-direction: column; gap: 48px}
 .c-717a55{display: flex; flex-direction: column; gap: 0.8em; font-size: clamp(21px, 2vw, 27px); line-height: 1.32; letter-spacing: -0.02em}
