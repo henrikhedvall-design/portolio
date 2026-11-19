@@ -16,10 +16,10 @@
 .ld .li{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);clip-path:polygon(0 0,53.125% 0,31.25% 100%,0 100%)}
 .cl{display:flex;aspect-ratio:16/10;container-type:inline-size}
 .st{position:relative;transform-origin:50% 100%}
-.s1{flex:0 0 37.5%;background:#F1EFEC}.s2{flex:0 0 20%;background:#D7E9FB}.s3{flex:0 0 10%;background:#FF6319}.s4{flex:1 0 0;background:#160D0B}
+.s1{flex:0 0 20%;background:#F1EFEC}.s2{flex:0 0 37.5%;background:#D7E9FB}.s3{flex:0 0 10%;background:#FF6319}.s4{flex:1 0 0;background:#160D0B}
 .st span{position:absolute;left:2cqw;bottom:2cqw;font:500 max(8px,.8125cqw)/1.54 'Geist Mono',ui-monospace,monospace;letter-spacing:.02em;color:rgba(22,13,11,.8);white-space:nowrap}
 .s4 span{color:rgba(241,239,236,.9)}
-@container (max-width: 700px){.s1{flex-basis:30%}.s3{flex-basis:17.5%}}
+@container (max-width: 700px){.s2{flex-basis:30%}.s3{flex-basis:17.5%}}
 @media (prefers-reduced-motion: no-preference){
 .oc .ob,.oc .o1,.oc .o2{transform-box:fill-box;transform-origin:50% 50%}
 .oc{animation:ocF 5.5s ease-in-out infinite alternate}
