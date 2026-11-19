@@ -34,6 +34,8 @@ ASSETS = {
     "9ffa3ed1de920fde7273fe2fe27b9399": "ww-chapter.mp4", "4d33343efbf915006e8ab6ce4fa5d9c6": "ww-chapter-poster.jpg",
     "3d06dd886f13b0f23664e9310a1f4aa1": "ww-chapter.mp4", "d0029e299ca31e8e231096be68904edd": "ww-chapter-poster.jpg",
     "c8bd8f19353c8198c8afde9cd17068cc": "ww-hero.mp4", "2822d4919f4f642a69ad10a10deeb4ad": "ww-chapter.mp4",
+    "25c8e718fba3a3e3abfa79072596ea3b": "ww-calendar.jpg", "ee61ad9222f5180a5d2f988f9c3b0003": "ww-calendar-full.jpg",
+    "fb09a38442ba8f56569595e423d6d417": "ww-chapter.mp4", "5391c4faf76b3f0ef892577da286287c": "ww-chapter-poster.jpg",
     "76d0c58a339e252ae62ff5001f075ec3": "reda-invoice.mp4",
     "c559b303cef21837a8244d9c09d533e3": "sas.jpg",
 }
@@ -190,7 +192,7 @@ SVC_ICONS = [
     '<g class="spin"><g class="turn"><path class="s" d="M12 4v16" pathLength="1"></path><path class="s dl" d="M4 12h16" pathLength="1"></path></g></g><circle class="nd" cx="19" cy="5" r="2.6"></circle>',
     '<path class="s k dm d1" d="M12 3l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d2" d="M6.4 8.6l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d3" d="M17.6 8.6l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path><path class="s dm d4" d="M12 14.2l3.4 3.4-3.4 3.4-3.4-3.4z" pathLength="1"></path>',
     '<path class="s cv" d="M4.5 19.5C11 19.5 11 5 19.5 5" pathLength="1"></path><path class="s hl" d="M19.5 5H12.4" pathLength="1"></path><circle class="s kb" cx="11" cy="5" r="1.4" pathLength="1"></circle><circle class="nd g st" cx="4.5" cy="19.5" r="2.4"></circle><rect class="nd st" x="17.4" y="2.9" width="4.2" height="4.2" rx="1.1"></rect>',
-    '<path class="nd bt" d="M12 3.8l3.7 6.4H8.3z" style="stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round"></path><circle class="s bc" cx="7.4" cy="17" r="3.4" pathLength="1"></circle><rect class="s bs" x="14" y="13.6" width="6.8" height="6.8" rx="1.1" pathLength="1" style="transition-delay: 200ms"></rect>',
+    '<path class="nd bt" d="M7.4 14l3.7 6.4H3.7z" style="stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round"></path><circle class="s bc" cx="12" cy="7.7" r="3.4" pathLength="1"></circle><rect class="s bs" x="14" y="13.6" width="6.8" height="6.8" rx="1.1" pathLength="1" style="transition-delay: 200ms"></rect>',
 ]
 
 

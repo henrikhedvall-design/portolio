@@ -116,7 +116,7 @@ footer.bleed{clip-path:inset(-2px -100vmax 0)}
 @media (prefers-reduced-motion: no-preference){
 .ic.in .bs{animation:bsIn 900ms cubic-bezier(.2,.7,.2,1) 500ms backwards}
 .svc-row:hover .ic.in .bt{animation:btS 750ms cubic-bezier(.3,1.35,.5,1) both}
-.svc-row:hover .ic.in .bs{animation:bsS 750ms cubic-bezier(.3,1.35,.5,1) 90ms both}
+.svc-row:hover .ic.in .bs{animation:bsS 750ms cubic-bezier(.3,1.35,.5,1) 260ms both}
 .svc-row:hover .ic.in .bc{animation:bcH 620ms cubic-bezier(.3,0,.3,1) 180ms both}
 @keyframes bsIn{from{transform:rotate(-90deg)}to{transform:none}}
 @keyframes btS{from{transform:none}to{transform:rotate(120deg)}}
