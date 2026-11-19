@@ -49,7 +49,7 @@ PAGES = [
      "Lettering, identity and animated titles for a ski film.",
      "ww.css", "", "ww-hero-poster.jpg", "1.02"),
     ("more", "more-work/index.html", "More work: Atlar, Klarna, Qapital – Henrik Hedvall",
-     "A selection of other things I have designed over the years, from fintech products to logos and record sleeves.",
+     "A selection of other things I’ve designed over the years, from fintech products to logos and record sleeves.",
      "", "", "atlar.jpg", "1.02"),
 ]
 
