@@ -84,12 +84,7 @@ footer.bleed::before{content:"";position:absolute;left:0;right:0;top:-1px;height
 .svc{position:relative;top:-1px}
 .ic .s{fill:none;stroke:#5E5E5A;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1)}
 .ic.in .s{stroke-dashoffset:0}
-.ic .s.dl{transition-delay:200ms}
 .ic .s.k{stroke:var(--accent)}
-.ic .spin,.ic .turn{transform-origin:12px 12px}
-.ic.in .spin{animation:spin 900ms cubic-bezier(.65,0,.35,1) 900ms both}
-.svc-row:hover .ic.in .turn{animation:spin 800ms cubic-bezier(.65,0,.35,1) both}
-@keyframes spin{from{transform:rotate(-90deg)}to{transform:rotate(0)}}
 @keyframes pop{from{transform:scale(.35)}to{transform:scale(1)}}
 .ic .cv{d:path("M4.5 19.5C11 19.5 11 5 19.5 5");transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1),d 650ms cubic-bezier(.2,.7,.2,1)}
 .ic .hl{d:path("M19.5 5H12.4");transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1) 500ms,d 650ms cubic-bezier(.2,.7,.2,1)}
@@ -112,12 +107,6 @@ footer.bleed::before{content:"";position:absolute;left:0;right:0;top:-1px;height
 .svc-row:hover .ic.in .d2{transform:translateX(-1.3px)}
 .svc-row:hover .ic.in .d3{transform:translateX(1.3px)}
 .svc-row:hover .ic.in .d4{transform:translateY(1.3px)}
-.ic .l,.ic .r{transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1),transform 350ms cubic-bezier(.2,.7,.2,1)}
-.ic .r{transition-delay:200ms,0ms}
-.ic.in .l{animation:inL 900ms cubic-bezier(.2,.7,.2,1) 1000ms backwards}
-.ic.in .r{animation:inR 900ms cubic-bezier(.2,.7,.2,1) 1000ms backwards}
-@keyframes inL{from{transform:translateX(-3.5px)}to{transform:none}}
-@keyframes inR{from{transform:translateX(3.5px)}to{transform:none}}
 .ic .bt{transform-origin:50% 66.67%}
 .ic .bc,.ic .bs,.ic .ap{transform-box:fill-box;transform-origin:50% 50%}
 @media (prefers-reduced-motion: no-preference){
