@@ -68,7 +68,11 @@ html.dk :is(#work,#services,#about)::before{background:#2A2A28}}
 .rv.in{opacity:1}
 }
 .bleed{background:var(--accent);box-shadow:0 0 0 100vmax var(--accent);clip-path:inset(0 -100vmax)}
+@media (prefers-color-scheme: dark){:where(html:not(.lt)) .bleed{background:#2F5D4B;box-shadow:0 0 0 100vmax #2F5D4B}}
+:where(html.dk) .bleed{background:#2F5D4B;box-shadow:0 0 0 100vmax #2F5D4B}
 footer.bleed{clip-path:inset(-2px -100vmax 0)}
+footer.bleed{position:relative;border-top-color:transparent !important}
+footer.bleed::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:rgba(245,245,243,.18);box-shadow:0 0 0 100vmax rgba(245,245,243,.18);clip-path:inset(0 -100vmax);pointer-events:none}
 .mail{color:#F5F5F3;border-bottom:1px solid rgba(245,245,243,.4);transition:border-color 400ms ease}
 .mail:hover{color:#F5F5F3;border-color:#F5F5F3}
 .foot{color:rgba(245,245,243,.62)}
