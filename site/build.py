@@ -39,7 +39,7 @@ ASSETS = {
     "c8bd8f19353c8198c8afde9cd17068cc": "ww-hero.mp4", "2822d4919f4f642a69ad10a10deeb4ad": "ww-chapter.mp4",
     "25c8e718fba3a3e3abfa79072596ea3b": "ww-calendar.jpg", "ee61ad9222f5180a5d2f988f9c3b0003": "ww-calendar-full.jpg",
     "fb09a38442ba8f56569595e423d6d417": "ww-chapter.mp4", "5391c4faf76b3f0ef892577da286287c": "ww-chapter-poster.jpg",
-    "76d0c58a339e252ae62ff5001f075ec3": "reda-invoice.mp4",
+    "c8c112a187b27ade01bd006fb3d39ce4": "reda-invoice.mp4",
     "c559b303cef21837a8244d9c09d533e3": "sas.jpg",
 }
 
