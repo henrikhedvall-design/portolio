@@ -45,13 +45,13 @@
 @keyframes ld{0%,6%{clip-path:polygon(0 0,53.125% 0,31.25% 100%,0 100%)}28%,36%{clip-path:polygon(0 0,80% 0,58.125% 100%,0 100%)}50%,56%{clip-path:polygon(0 0,53.125% 0,31.25% 100%,0 100%)}78%,86%{clip-path:polygon(0 0,27% 0,5.125% 100%,0 100%)}100%{clip-path:polygon(0 0,53.125% 0,31.25% 100%,0 100%)}}
 .ac.rv{opacity:0;transform:translateY(8%);transition:opacity 900ms ease 150ms,transform 1400ms cubic-bezier(.2,.7,.2,1) 150ms}
 .ac.rv.in{opacity:1;transform:none}
-.rv.in .fl{animation:fl1 6s cubic-bezier(.45,0,.2,1) 2.4s infinite}
+.rv.in .fl{animation:fl1 4.5s cubic-bezier(.45,0,.2,1) 2.4s infinite}
 .rv.in .f2{animation-name:fl2}.rv.in .f3{animation-name:fl3}.rv.in .f4{animation-name:fl4}.rv.in .f5{animation-name:fl5}
-@keyframes fl1{0%{opacity:1;transform:scaleY(0)}6%{opacity:1;transform:scaleY(1)}42%{opacity:1;transform:scaleY(1)}52%,100%{opacity:0;transform:scaleY(1)}}
-@keyframes fl2{0%,6%{opacity:1;transform:scaleY(0)}12%{opacity:1;transform:scaleY(1)}42%{opacity:1;transform:scaleY(1)}52%,100%{opacity:0;transform:scaleY(1)}}
-@keyframes fl3{0%,12%{opacity:1;transform:scaleY(0)}18%{opacity:1;transform:scaleY(1)}42%{opacity:1;transform:scaleY(1)}52%,100%{opacity:0;transform:scaleY(1)}}
-@keyframes fl4{0%,18%{opacity:1;transform:scaleY(0)}24%{opacity:1;transform:scaleY(1)}42%{opacity:1;transform:scaleY(1)}52%,100%{opacity:0;transform:scaleY(1)}}
-@keyframes fl5{0%,24%{opacity:1;transform:scaleY(0)}30%{opacity:1;transform:scaleY(1)}42%{opacity:1;transform:scaleY(1)}52%,100%{opacity:0;transform:scaleY(1)}}
+@keyframes fl1{0%{opacity:1;transform:scaleY(0)}8%{opacity:1;transform:scaleY(1)}56%{opacity:1;transform:scaleY(1)}69%,100%{opacity:0;transform:scaleY(1)}}
+@keyframes fl2{0%,8%{opacity:1;transform:scaleY(0)}16%{opacity:1;transform:scaleY(1)}56%{opacity:1;transform:scaleY(1)}69%,100%{opacity:0;transform:scaleY(1)}}
+@keyframes fl3{0%,16%{opacity:1;transform:scaleY(0)}24%{opacity:1;transform:scaleY(1)}56%{opacity:1;transform:scaleY(1)}69%,100%{opacity:0;transform:scaleY(1)}}
+@keyframes fl4{0%,24%{opacity:1;transform:scaleY(0)}32%{opacity:1;transform:scaleY(1)}56%{opacity:1;transform:scaleY(1)}69%,100%{opacity:0;transform:scaleY(1)}}
+@keyframes fl5{0%,32%{opacity:1;transform:scaleY(0)}40%{opacity:1;transform:scaleY(1)}56%{opacity:1;transform:scaleY(1)}69%,100%{opacity:0;transform:scaleY(1)}}
 .rv .st{transform:scaleY(0);transition:transform 1400ms cubic-bezier(.2,.7,.2,1)}
 .rv .s2{transition-delay:110ms}.rv .s3{transition-delay:220ms}.rv .s4{transition-delay:330ms}
 .rv.in .st{transform:none}
