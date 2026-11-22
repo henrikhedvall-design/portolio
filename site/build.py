@@ -46,7 +46,7 @@ ASSETS = {
 PAGES = [
     # source, output path, title, description, extra css, extra fonts, share image, reveal threshold
     ("main", "index.html", "Henrik Hedvall – Freelance product designer",
-     "Freelance product designer with more than 15 years of experience, from agencies and startups to Klarna and Tink.",
+     "Freelance product designer, with a background from agencies and startups to Klarna and Tink.",
      "main.css", "", "share-start.jpg", "0.85"),
     ("oqto", "oqto/index.html", "Oqto product redesign and design system – Henrik Hedvall",
      "A redesign of Oqto’s accounting platform and mobile app, built on a new design system.",
@@ -55,7 +55,7 @@ PAGES = [
      "Six years as a designer at Tink, as it grew from a team of ten into Europe’s leading open banking platform.",
      "tink.css", "", "tink-hero-full.jpg", "1.02"),
     ("ww", "weekend-warriors/index.html", "Weekend Warriors ski film identity – Henrik Hedvall",
-     "Lettering, identity and animated titles for a ski film.",
+     "Lettering, identity and graphics for a ski film.",
      "ww.css", "", "ww-hero-poster.jpg", "1.02"),
     ("more", "more-work/index.html", "More work: Atlar, Klarna, Qapital – Henrik Hedvall",
      "A selection of other things I’ve designed over the years, from fintech products to logos and record sleeves.",
