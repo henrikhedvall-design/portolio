@@ -37,6 +37,7 @@
 .c-eyebrow{flex: 0 1 300px; margin: 0; font-size: 16px; font-weight: 400; color: #5E5E5A}
 .c-cdea6d{flex: 1 1 640px; min-width: 0; display: flex; flex-direction: column; gap: clamp(24px, 3vw, 44px)}
 .c-e6c089{margin: 0; max-width: 16ch; font-size: clamp(32px, 4.4vw, 64px); line-height: 1.04; font-weight: 500; letter-spacing: -0.035em; text-wrap: balance}
+.c-cb9cb9{color: var(--accent)}
 .c-stack{display: flex; flex-direction: column}
 .c-e2e9c7{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px 24px; padding: 28px 0}
 .c-svc-head{display: flex; align-items: flex-start; gap: 16px; font-size: clamp(21px, 1.9vw, 26px)}
