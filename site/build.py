@@ -19,7 +19,7 @@ ASSETS = {
     "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg", "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
     "aa1eb67f8c8be2493bbfd4aa54762e37": "oqto-type.jpg", "471465112e013b29ffcea0fa0ea3b559": "oqto-components.jpg",
     "c34dd534a3003ee261711ca87890d62c": "oqto-dark.jpg", "b7a1f7ae78d363ddf79c024ff4bfa8f4": "oqto-light.jpg",
-    "c34b591a7f8fddf09f75926bdbe9cb4d": "oqto-screens.jpg", "9aed89d8ef290ab64dbcbde6ca8f4fda": "oqto-screens.jpg", "6f9deb035305d822828b08e689c25451": "oqto-screens.jpg", "58bfc0c4270a375bc74b6d5220c08759": "oqto-screens.jpg",
+    "c34b591a7f8fddf09f75926bdbe9cb4d": "oqto-screens.jpg", "9aed89d8ef290ab64dbcbde6ca8f4fda": "oqto-screens.jpg", "6f9deb035305d822828b08e689c25451": "oqto-screens.jpg", "dbdfddcb489a4fa26ab7ab5cb80e16ca": "oqto-screens.jpg",
     "58de01b9072eda84254cd01a48c40ef2": "oqto-hero.jpg", "39ef734d077cfb8ce0194b15663db30b": "oqto-hero-full.jpg",
     "61a378bf7433de32c670c178063634b2": "oqto-autopilot-screen.jpg", "383cff83cd54a399877734eba3790234": "oqto-autopilot.jpg",
     "43354ec57226250cefeb1cbb4d54810b": "oqto-autopilot-card.jpg", "9aa647c4ebf37b042b20b8b87da433a1": "oqto-components.jpg", "65ae19d31029925e96dfdd8e898d1392": "oqto-components.jpg",
