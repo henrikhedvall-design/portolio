@@ -82,7 +82,7 @@ footer.bleed::before{content:"";position:absolute;left:0;right:0;top:-1px;height
 .foot:hover{color:#F5F5F3}
 .ic{flex:none;width:1.15em;height:1.15em;overflow:visible;position:relative;top:2px}
 .svc{position:relative;top:-1px}
-.ic .s{fill:none;stroke:#5E5E5A;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1)}
+.ic .s{fill:none;stroke:#5E5E5A;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 2;stroke-dashoffset:1.05;transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1)}
 .ic.in .s{stroke-dashoffset:0}
 .ic .s.k{stroke:var(--accent)}
 @keyframes pop{from{transform:scale(.35)}to{transform:scale(1)}}
