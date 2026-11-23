@@ -97,7 +97,7 @@ footer.bleed::before{content:"";position:absolute;left:0;right:0;top:-1px;height
 .ic .nd{fill:var(--accent);transform-box:fill-box;transform-origin:50% 50%;transform:scale(0);transition:transform 600ms cubic-bezier(.34,1.56,.64,1) 900ms}
 .ic.in .nd{transform:scale(1)}
 .ic .nd.g{fill:#5E5E5A;transition-delay:300ms}
-.ic .nd.st,.ic.in .nd.st,.svc-row:hover .ic.in .nd.st{transform:none;animation:none;transition:none}
+.ic .nd.st{transition-delay:450ms}.ic .nd.g.st{transition-delay:0ms}.svc-row:hover .ic.in .nd.st{animation:none}
 .svc-row:hover .ic.in .nd{animation:pop 600ms cubic-bezier(.34,1.56,.64,1) both}
 .ic .dm{transition:stroke-dashoffset 1100ms cubic-bezier(.65,0,.35,1),transform 450ms cubic-bezier(.2,.7,.2,1)}
 .ic .d2{transition-delay:120ms,0ms}
