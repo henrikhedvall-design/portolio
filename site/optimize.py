@@ -13,6 +13,9 @@ GRADIENTS = {
     "oqto-dark": ((22, 13, 11), (52, 25, 13), 0.35, 1.0),
 }
 GRADIENT_VERSION = "g1"
+# WebP quality for every variant. Raised from 80 (JPEG sources) to 90 on 2026-11-23 for sharper text.
+WEBP_QUALITY = 90
+WEBP_VERSION = "q90"
 
 
 def smooth_gradient(im, width, c0, c1, start, end, noise=1.5, seed=7):
@@ -63,7 +66,7 @@ def make_variants(src_dir, cache_dir, out_dir, keep_original=()):
         data = open(path, "rb").read()
         tag = hashlib.sha256(data).hexdigest()[:10]
         im = None
-        full_only = base.endswith("-full")
+        full_only = base.endswith("-full") or base.endswith("-xl")
         out = []
         with Image.open(path) as probe:
             W = probe.width
@@ -74,7 +77,7 @@ def make_variants(src_dir, cache_dir, out_dir, keep_original=()):
                 cached = os.path.join(cache_dir, f"{tag}-{GRADIENT_VERSION}-{name}")
             else:
                 name = f"{base}.webp" if w == W else f"{base}-{w}.webp"
-                cached = os.path.join(cache_dir, f"{tag}-{name}")
+                cached = os.path.join(cache_dir, f"{tag}-{WEBP_VERSION}-{name}")
             if not os.path.exists(cached):
                 if im is None:
                     im = Image.open(path).convert("RGB")
@@ -82,7 +85,7 @@ def make_variants(src_dir, cache_dir, out_dir, keep_original=()):
                     smooth_gradient(im, w, *grad).save(cached, "JPEG", quality=95, subsampling=0, optimize=True)
                 else:
                     v = im if w == W else im.resize((w, round(im.height * w / W)), Image.LANCZOS)
-                    v.save(cached, "WEBP", quality=90 if ext == "png" else 80, method=6)
+                    v.save(cached, "WEBP", quality=WEBP_QUALITY, method=6)
             _copy(cached, os.path.join(out_dir, name))
             out.append((name, w))
         variants[f] = out
@@ -104,7 +107,17 @@ def responsive_images(html, page, variants):
             return tag
         prefix, name = sm.group(1), sm.group(2)
         lb = re.search(r'\sdata-lbsrc="(?:\.\./)*assets/([^"]+)"', tag)
-        if lb and lb.group(1) in variants:
+        # A larger file for the image viewer: assets/<name>-xl.jpg or .png, exported at the full frame size.
+        xl = next((f"{name.rsplit('.', 1)[0]}-xl.{e}" for e in ("jpg", "png") if f"{name.rsplit('.', 1)[0]}-xl.{e}" in variants), None)
+        if xl and page != "main":
+            if lb:
+                tag = tag.replace(lb.group(0), "")
+            tag = tag.replace(sm.group(0), sm.group(0) + f' data-lbsrc="{prefix}{variants[xl][-1][0]}"', 1)
+            lb = re.search(r'\sdata-lbsrc="(?:\.\./)*assets/([^"]+)"', tag)
+            xl_done = True
+        else:
+            xl_done = False
+        if lb and not xl_done and lb.group(1) in variants:
             tag = tag.replace(lb.group(0), f' data-lbsrc="{prefix}{variants[lb.group(1)][-1][0]}"')
         if name not in variants:
             return tag
