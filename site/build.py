@@ -24,7 +24,7 @@ ASSETS = {
     "61a378bf7433de32c670c178063634b2": "oqto-autopilot-screen.jpg", "383cff83cd54a399877734eba3790234": "oqto-autopilot.jpg",
     "43354ec57226250cefeb1cbb4d54810b": "oqto-autopilot-card.jpg", "9aa647c4ebf37b042b20b8b87da433a1": "oqto-components.jpg", "65ae19d31029925e96dfdd8e898d1392": "oqto-components.jpg",
     "a06f2b58758b6fb555fed11e960a2e03": "oqto-app.jpg", "e12f6c6e1533b4a8be48896524a14591": "oqto-app.jpg",
-    "637462e7e8cb1a3e784b541fafad197d": "tink-logo.jpg", "d231f1039acc7b8c33ee891994a401d8": "tink-logo.jpg", "6e3a6e0409bc43d9788ccd3c57f38416": "tink-colours.jpg",
+    "637462e7e8cb1a3e784b541fafad197d": "tink-logo.jpg", "d231f1039acc7b8c33ee891994a401d8": "tink-logo.jpg", "b6b1e8a8e5fa98b758e017b9d7b81266": "tink-colours.jpg", "6e3a6e0409bc43d9788ccd3c57f38416": "tink-colours-full.jpg",
     "8ccadca1c7c70a65154867eb4540ba2f": "tink-poster.jpg", "9a65abafdb9345d5e481ffe969c22879": "tink-type.jpg",
     "3bca89cef68a116650a6c5ef6770cb4f": "tink-icons.jpg", "c1f94b98ab6d53cafc91e170a44835eb": "tink-dot-a.png",
     "f7b58a42b01e4846ca3732440ee7e58e": "tink-dot-b.png", "700febebcb68be373cda9b187586076e": "tink-onboarding.jpg", "4f6ed7b8c64d933afb03fb554d2835aa": "tink-onboarding.jpg",

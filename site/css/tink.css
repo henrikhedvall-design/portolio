@@ -13,6 +13,10 @@
 .dots .dt{position:absolute;width:7%}
 .dots .da{left:79.35%;top:47.04%}
 .dots .db{left:66.5%;top:64.8%}
+.pal{position:relative}
+.pal .pc{position:absolute;display:block;width:12%;aspect-ratio:1;border-radius:50%}
+.pal .pc1{left:35.6%;top:22.8%;background:#36B572}
+.pal .pc2{left:58.7%;top:60.08%;background:#0E9EC1}
 @media (prefers-reduced-motion: no-preference){
 .ey{animation:eyL 11s cubic-bezier(.45,0,.55,1) 1.5s infinite}
 @keyframes eyL{0%,12%{transform:none}45%,62%{transform:translateX(-89%)}95%,100%{transform:none}}
@@ -28,4 +32,7 @@
 .dots .db{animation:dtB 10.5s ease-in-out -3s infinite alternate}
 @keyframes dtA{from{transform:translate(-6%,-14%)}to{transform:translate(6%,14%)}}
 @keyframes dtB{from{transform:translate(8%,10%)}to{transform:translate(-8%,-12%)}}
+.pal .pc1{animation:pcF 7s ease-in-out infinite alternate}
+.pal .pc2{animation:pcF 9s ease-in-out -3s infinite alternate-reverse}
+@keyframes pcF{from{transform:translateY(-12%)}to{transform:translateY(12%)}}
 }
