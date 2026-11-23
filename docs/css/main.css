@@ -121,9 +121,7 @@ footer.bleed::before{content:"";position:absolute;left:0;right:0;top:-1px;height
 @keyframes bsS{from{transform:none}to{transform:rotate(90deg)}}
 @keyframes bcH{0%,100%{transform:none}42%{transform:translateY(-2.6px)}}
 }
-.svc-row:hover .ic.in .l{transform:translateX(-1.5px);transition-duration:1100ms,700ms}
-.svc-row:hover .ic.in .r{transform:translateX(1.5px);transition-duration:1100ms,700ms}
-@media (prefers-reduced-motion: reduce){.ic .s{stroke-dasharray:none;stroke-dashoffset:0;transition:none}.svc-row:hover .ic.in .nd,.ic .nd{transform:none;animation:none;transition:none}.ic .spin,.ic.in .spin,.svc-row:hover .ic.in .turn{animation:none;transform:none}.ic .l,.ic .r,.ic.in .l,.ic.in .r,.svc-row:hover .ic.in .l,.svc-row:hover .ic.in .r{transform:none;transition:none;animation:none}}
+@media (prefers-reduced-motion: reduce){.ic .s{stroke-dasharray:none;stroke-dashoffset:0;transition:none}.svc-row:hover .ic.in .nd,.ic .nd{transform:none;animation:none;transition:none}}
 @media (prefers-reduced-motion: no-preference){
 .r2{animation:rise 1100ms cubic-bezier(.2,.7,.2,1) 900ms both}
 .w{animation:settle 1400ms cubic-bezier(.16,.84,.24,1) backwards}

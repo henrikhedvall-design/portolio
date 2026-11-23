@@ -10,37 +10,64 @@ DIST = os.path.join(ROOT, "_plain")
 DOMAIN = "henrikhedvall.com"  # e.g. "henrikhedvall.se" – set when known (used for CNAME and share image URLs)
 
 ASSETS = {
-    "2e2296073c579610e979548d8ea65aec": "oqto-hero.jpg", "0445cbdf439d529c4528df06bde41d32": "tink-hero.jpg",
-    "75508b9ec8aafed6d13291fd1dc33ed1": "tink-circle-a.png", "b995ecd141694efdc8b48696545bfc49": "tink-circle-b.png",
-    "233ee65b2141d99bdbb6690980ede10f": "ww-hero.mp4", "e9707fabde6acdb8dac9fd62a9b1cd87": "ww-hero-poster.jpg",
-    "d476c1de7d4ebcd154be542a995a235d": "ww-hero.mp4", "976879ef63486b34644bd1d3da83f9dd": "ww-hero.mp4", "07e1d0d6fa6239a51a8df2bc62c70bb5": "ww-hero-poster.jpg", "7d129ab7d08822063949654e82556f18": "ww-hero-poster.jpg",
-    "16fa00db29608fb33f843c4995f7481c": "klarna.jpg", "e5bff79d085d4e0ec60e4a1f3527f37a": "qapital.jpg",
-    "b7f02dd23c21bd09813d00f3d07ad053": "atlar.jpg", "04af04a40b5e649ddbb3c42f2d96d577": "atlar.jpg", "c01776bc0bd7ccddd66d72ed605c93e0": "romo-bygg.jpg",
-    "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg", "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
-    "aa1eb67f8c8be2493bbfd4aa54762e37": "oqto-type.jpg", "471465112e013b29ffcea0fa0ea3b559": "oqto-components.jpg",
-    "c34dd534a3003ee261711ca87890d62c": "oqto-dark.jpg", "b7a1f7ae78d363ddf79c024ff4bfa8f4": "oqto-light.jpg",
-    "c34b591a7f8fddf09f75926bdbe9cb4d": "oqto-screens.jpg", "9aed89d8ef290ab64dbcbde6ca8f4fda": "oqto-screens.jpg", "6f9deb035305d822828b08e689c25451": "oqto-screens.jpg", "0a2417b9568fc6adf482700ec69af507": "oqto-screens.jpg",
-    "58de01b9072eda84254cd01a48c40ef2": "oqto-hero.jpg", "39ef734d077cfb8ce0194b15663db30b": "oqto-hero-full.jpg",
-    "61a378bf7433de32c670c178063634b2": "oqto-autopilot-screen.jpg", "383cff83cd54a399877734eba3790234": "oqto-autopilot.jpg",
-    "43354ec57226250cefeb1cbb4d54810b": "oqto-autopilot-card.jpg", "9aa647c4ebf37b042b20b8b87da433a1": "oqto-components.jpg", "5fc9ad4f7f65985bed959dba64ca91ce": "oqto-components.jpg",
-    "a06f2b58758b6fb555fed11e960a2e03": "oqto-app.jpg", "e12f6c6e1533b4a8be48896524a14591": "oqto-app.jpg", "f2566f7e471d268e8c3b744d87688cad": "oqto-app.jpg",
-    "637462e7e8cb1a3e784b541fafad197d": "tink-logo.jpg", "d231f1039acc7b8c33ee891994a401d8": "tink-logo.jpg", "b6b1e8a8e5fa98b758e017b9d7b81266": "tink-colours.jpg", "6e3a6e0409bc43d9788ccd3c57f38416": "tink-colours-full.jpg",
-    "8ccadca1c7c70a65154867eb4540ba2f": "tink-poster.jpg", "9a65abafdb9345d5e481ffe969c22879": "tink-type.jpg",
-    "3bca89cef68a116650a6c5ef6770cb4f": "tink-icons.jpg", "c1f94b98ab6d53cafc91e170a44835eb": "tink-dot-a.png",
-    "f7b58a42b01e4846ca3732440ee7e58e": "tink-dot-b.png", "700febebcb68be373cda9b187586076e": "tink-onboarding.jpg", "4f6ed7b8c64d933afb03fb554d2835aa": "tink-onboarding.jpg",
-    "1985dbdba6e3530443f5df8e166f4dcd": "tink-screens.jpg", "8b01cacb59ff02a59f0974ee3934b25e": "tink-screens.jpg", "ac8a5f15eb231d84428fc1641a1aa236": "tink-dark.jpg",
-    "1d192f727744a75078c3b2c94dba8f4a": "ww-identity.png", "efab65d4d433ed4ba4f636274f9a9e99": "ww-calendar.jpg",
-    "d7569c8d5cc400fd7471c27a4c2b9144": "ww-calendar-full.jpg", "dd36df8f9b4a2f8280afd473ea40f9b3": "ww-skier.png",
-    "2788faab4aa5f42e2f2ca72c1315c161": "ww-calendar.jpg", "23288ad0ee329575c8589474e7c30676": "ww-calendar-full.jpg",
-    "3b0aba6df729159ddd92d895620fe94c": "ww-chapter.mp4", "27f8f596ff1426df0556b45195ddebe2": "ww-chapter-poster.jpg",
-    "220ec7629fb9c909faecfd6466c52d39": "ww-chapter.mp4", "dd4b783c3cc9d8ee0fd9f34945bd129d": "ww-chapter-poster.jpg",
-    "9ffa3ed1de920fde7273fe2fe27b9399": "ww-chapter.mp4", "4d33343efbf915006e8ab6ce4fa5d9c6": "ww-chapter-poster.jpg",
-    "3d06dd886f13b0f23664e9310a1f4aa1": "ww-chapter.mp4", "d0029e299ca31e8e231096be68904edd": "ww-chapter-poster.jpg",
-    "c8bd8f19353c8198c8afde9cd17068cc": "ww-hero.mp4", "2822d4919f4f642a69ad10a10deeb4ad": "ww-chapter.mp4",
-    "25c8e718fba3a3e3abfa79072596ea3b": "ww-calendar.jpg", "ee61ad9222f5180a5d2f988f9c3b0003": "ww-calendar-full.jpg",
-    "fb09a38442ba8f56569595e423d6d417": "ww-chapter.mp4", "5391c4faf76b3f0ef892577da286287c": "ww-chapter-poster.jpg",
+    "2a7bc3bed6a7a9a9a10ede8c623764c8": "atlar-xl.jpg",
+    "04af04a40b5e649ddbb3c42f2d96d577": "atlar.jpg",
+    "fec15f3ac0007fd30fc3f6f249fd448c": "henrik.jpg",
+    "16fa00db29608fb33f843c4995f7481c": "klarna.jpg",
+    "e1100050eb1efe98370a07dead596dbc": "oqto-app-xl.jpg",
+    "f2566f7e471d268e8c3b744d87688cad": "oqto-app.jpg",
+    "43354ec57226250cefeb1cbb4d54810b": "oqto-autopilot-card.jpg",
+    "45cd0dc88ad94cb25a6674ab0ba1bb28": "oqto-autopilot-screen-xl.jpg",
+    "61a378bf7433de32c670c178063634b2": "oqto-autopilot-screen.jpg",
+    "fe34c7ef859641213cdf01257dfce7dc": "oqto-components-xl.jpg",
+    "5fc9ad4f7f65985bed959dba64ca91ce": "oqto-components.jpg",
+    "7bb98b1cedbf5549a9ef0ff8600555ba": "oqto-dark.jpg",
+    "1a78424c08826e1eb2388ef2543bbc02": "oqto-hero-xl.jpg",
+    "58de01b9072eda84254cd01a48c40ef2": "oqto-hero.jpg",
+    "b7a1f7ae78d363ddf79c024ff4bfa8f4": "oqto-light.jpg",
+    "13a39d5527e7e622a92c1daa867c0e03": "oqto-screens-xl.jpg",
+    "0a2417b9568fc6adf482700ec69af507": "oqto-screens.jpg",
+    "696d01a2bb517cf30a5b0dbd800937d0": "oqto-type-xl.jpg",
+    "2f6011ff07d92a9cc94337ce2b55ac71": "oqto-type.jpg",
+    "c30b1f71d0a535919fe054f29e7b7aa9": "qapital-xl.jpg",
+    "e5bff79d085d4e0ec60e4a1f3527f37a": "qapital.jpg",
     "c8c112a187b27ade01bd006fb3d39ce4": "reda-invoice.mp4",
+    "269cf6bfda3d974ba5f40d59c1b4e79d": "reda-xl.jpg",
+    "61da82eb6538231f6a1de8de1831ee8a": "reda.jpg",
+    "b8ff85747e8600b3933aa8432041fc58": "romo-bygg-xl.jpg",
+    "c01776bc0bd7ccddd66d72ed605c93e0": "romo-bygg.jpg",
     "c559b303cef21837a8244d9c09d533e3": "sas.jpg",
+    "a7946e70cf68d6783764197652c42fc5": "svartanatt-xl.jpg",
+    "c4459226de797c4df204a6b0b06ca3d5": "svartanatt.jpg",
+    "75508b9ec8aafed6d13291fd1dc33ed1": "tink-circle-a.png",
+    "b995ecd141694efdc8b48696545bfc49": "tink-circle-b.png",
+    "c53a73cef6cd26f48649633274e3c7eb": "tink-colours-xl.jpg",
+    "b6b1e8a8e5fa98b758e017b9d7b81266": "tink-colours.jpg",
+    "55121a8fec3fad463ca3b5ec6634a2ff": "tink-dark-xl.jpg",
+    "308faa981e6e3fc23101c8a6f2fbb4b2": "tink-dark.jpg",
+    "c1f94b98ab6d53cafc91e170a44835eb": "tink-dot-a.png",
+    "f7b58a42b01e4846ca3732440ee7e58e": "tink-dot-b.png",
+    "dbed6a819d2c89e300b00f889e3de1fc": "tink-hero-xl.jpg",
+    "0445cbdf439d529c4528df06bde41d32": "tink-hero.jpg",
+    "eb1d525e5ead366e030068f6d61c1b7d": "tink-hero.jpg",
+    "a00529ab4899aa60104e0abbf76fb61a": "tink-icons-xl.jpg",
+    "c6d52141daec87eae2fb07cccabdb4ee": "tink-icons.jpg",
+    "d231f1039acc7b8c33ee891994a401d8": "tink-logo.jpg",
+    "ea9df17862539ae528ed6a0f69d7bde9": "tink-onboarding-xl.jpg",
+    "a69d2beb61b5c8002dcef6dcf2474857": "tink-onboarding.jpg",
+    "8ccadca1c7c70a65154867eb4540ba2f": "tink-poster.jpg",
+    "cbc87ae52b83852259959c157d79e31b": "tink-screens.jpg",
+    "5b2d218f709227d6fbf38ab2d0b28b60": "tink-type-xl.jpg",
+    "4eed41e59bd3d57b900568666a278387": "tink-type.jpg",
+    "ecdd0c23475ede67f3d9c65fd659a206": "ww-calendar-xl.jpg",
+    "25c8e718fba3a3e3abfa79072596ea3b": "ww-calendar.jpg",
+    "5391c4faf76b3f0ef892577da286287c": "ww-chapter-poster.jpg",
+    "fb09a38442ba8f56569595e423d6d417": "ww-chapter.mp4",
+    "7d129ab7d08822063949654e82556f18": "ww-hero-poster.jpg",
+    "c8bd8f19353c8198c8afde9cd17068cc": "ww-hero.mp4",
+    "d1c1edce6f54fad3246c695ba4abecf5": "ww-identity-xl.png",
+    "1d192f727744a75078c3b2c94dba8f4a": "ww-identity.png",
+    "dd36df8f9b4a2f8280afd473ea40f9b3": "ww-skier.png",
 }
 
 PAGES = [
@@ -382,6 +409,21 @@ def build():
         open(os.path.join(DIST, out), "w", encoding="utf-8").write(html)
         print("built", out, len(html))
     open(os.path.join(DIST, "css", "site.css"), "w", encoding="utf-8").write(styles.css())
+    prune_assets(DIST)
+
+
+def prune_assets(dist):
+    """Removes image and film files that no built page, stylesheet or script refers to
+    (size variants nothing uses, WebP copies of share images that are only served as JPEG)."""
+    text = ""
+    for d, _, files in os.walk(dist):
+        for name in files:
+            if name.endswith((".html", ".css", ".js", ".xml", ".txt")):
+                text += open(os.path.join(d, name), encoding="utf-8").read()
+    assets = os.path.join(dist, "assets")
+    for name in sorted(os.listdir(assets)):
+        if name not in text:
+            os.remove(os.path.join(assets, name))
 
 
 def version_refs(out):
